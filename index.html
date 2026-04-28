@@ -48,8 +48,17 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: background 0.2s;
+            margin-right: 1rem;
         }
         .cta-button:hover { background: #2563eb; }
+        .cta-button.secondary {
+            background: white;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        .cta-button.secondary:hover {
+            background: #f8fafc;
+        }
         
         .problems {
             padding: 4rem 0;
@@ -117,6 +126,23 @@
         .solution-list strong {
             color: #0f172a;
             font-size: 1.1rem;
+        }
+        .demo-callout {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            text-align: center;
+            border: 2px solid #3b82f6;
+        }
+        .demo-callout h4 {
+            font-size: 1.3rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .demo-callout p {
+            color: #475569;
+            margin-bottom: 1rem;
         }
         
         .how-it-works {
@@ -255,7 +281,10 @@
         <div class="container">
             <h2>Your Law Firm Runs on Routine.<br>We Automate It.</h2>
             <p>AI-powered workflow automation built specifically for solo and small law firms.</p>
-            <a href="mailto:hello@covenantsystems.ai?subject=Free%20Automation%20Assessment%20Request&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ABiggest%20time%20drain:%0D%0APreferred%20call%20times:" class="cta-button">Book Free Assessment</a>
+            <div>
+                <a href="mailto:hello@covenantsystems.ai?subject=Free%20Automation%20Assessment%20Request&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ABiggest%20time%20drain:%0D%0APreferred%20call%20times:" class="cta-button">Book Free Assessment</a>
+                <a href="/demo-workflow.html" class="cta-button secondary">See Demo Workflow</a>
+            </div>
         </div>
     </section>
     
@@ -311,6 +340,12 @@
                     </div>
                 </li>
             </ul>
+            
+            <div class="demo-callout">
+                <h4>📋 See Client Intake Automation In Action</h4>
+                <p>Walk through a detailed demo workflow that shows exactly how we save you 113 minutes per new client</p>
+                <a href="/demo-workflow.html" class="cta-button">View Demo Workflow</a>
+            </div>
         </div>
     </section>
     
