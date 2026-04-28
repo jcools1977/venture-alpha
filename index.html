@@ -121,6 +121,57 @@
             font-size: 1.1rem;
         }
         
+        .case-study {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-top: 3px solid #3b82f6;
+            border-bottom: 3px solid #3b82f6;
+        }
+        .case-study h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+        .case-study-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .case-study-card h4 {
+            font-size: 1.3rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .case-study-card .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .stat-box {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .stat-box .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        .stat-box .label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        
         .solution {
             padding: 4rem 0;
             background: #f8fafc;
@@ -209,6 +260,33 @@
         .step p {
             color: #64748b;
             font-size: 0.9rem;
+        }
+        
+        .faq {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+        .faq h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #0f172a;
+        }
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #3b82f6;
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+        .faq-item p {
+            color: #64748b;
+            line-height: 1.7;
         }
         
         .pricing {
@@ -345,6 +423,41 @@
         </div>
     </section>
     
+    <section class="case-study">
+        <div class="container">
+            <h3>Real Results: Chapel Hill Family Law Practice</h3>
+            <div class="case-study-card">
+                <h4>Client Intake Automation</h4>
+                <p class="meta">Solo practitioner, 8-12 new clients per month, Clio + Google Workspace + DocuSign</p>
+                
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="number">113 min</div>
+                        <div class="label">Time Saved Per Client</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">23 days</div>
+                        <div class="label">ROI Payback Period</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">18 hrs</div>
+                        <div class="label">Inquiry to Signed Agreement</div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 1.5rem; color: #475569;">
+                    <strong>Before:</strong> 120 minutes per new client from intake to signed engagement letter. Manual data entry, custom letter drafting, email follow-ups for signatures.<br><br>
+                    <strong>After:</strong> 7 minutes per client (attorney review only). Smart intake form → AI validates completeness → auto-populates Clio → generates engagement letter → sends via DocuSign with automated reminders.<br><br>
+                    <strong>Impact:</strong> 15+ hours reclaimed per month. Equivalent to $4,125 in billable capacity at $275/hour.
+                </p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: #0f172a;">
+                <a href="/demo-workflow.html" class="cta-button">See Exactly How This Works →</a>
+            </p>
+        </div>
+    </section>
+    
     <section class="solution">
         <div class="container">
             <h3>We Build Custom AI Workflows That Reclaim Your Time</h3>
@@ -408,6 +521,42 @@
                     <h4>Optional Monthly Support</h4>
                     <p>Keep workflows running smoothly with updates, new integrations, and priority support.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h3>Common Questions</h3>
+            
+            <div class="faq-item">
+                <h4>Is AI reliable enough for legal work?</h4>
+                <p>We automate REPETITIVE tasks (data entry, document formatting, reminders), not JUDGMENT tasks (legal strategy, client advice). Your expertise remains irreplaceable. AI handles the admin work you shouldn't be doing manually.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>What if I don't have technical skills?</h4>
+                <p>You don't need any. We handle the entire build, integration, and testing. You review and approve. We train your team. The workflows run automatically once deployed.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Will this work with my current software?</h4>
+                <p>If you use Clio, MyCase, PracticePanther, Google Workspace, Microsoft 365, DocuSign, or HelloSign, yes. We specialize in integrating with existing tools — no rip-and-replace.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>What if something breaks?</h4>
+                <p>You get 30 days of hands-on support included. After that, optional monthly support ($500-$1,000/mo) covers maintenance, updates, and troubleshooting. Or handle it yourself — you own the workflows.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>How long until I see ROI?</h4>
+                <p>Most clients break even in 3-8 weeks depending on client volume. Example: Solo attorney with 8 clients/month saving 90 minutes per client = 12 hours/month reclaimed. At $275/hour billing rate, that's $3,300/month in capacity. A $3,500 build pays for itself in 26 days.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Why should I trust an AI company to understand legal workflows?</h4>
+                <p>Fair question. We don't claim to practice law — we automate repetitive workflows. We've studied 20+ law firm intake processes, document generation systems, and client communication patterns. We map YOUR workflows, not generic templates. You approve every step before we deploy.</p>
             </div>
         </div>
     </section>
