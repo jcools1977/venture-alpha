@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Intake Automation - Demo Workflow | Covenant Systems AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        header { 
+            background: #0f172a;
+            color: white;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #3b82f6;
+        }
+        header h1 { font-size: 1.3rem; font-weight: 600; }
+        header a { color: #3b82f6; text-decoration: none; }
+        
+        .hero {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-bottom: 1px solid #cbd5e1;
+        }
+        .hero h2 { 
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #475569;
+        }
+        .hero .stat {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-top: 1rem;
+        }
+        
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        section:last-of-type { border-bottom: none; }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        
+        .process-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .process-comparison { grid-template-columns: 1fr; }
+        }
+        
+        .process-card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+        .process-card.automated {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        .process-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+        .process-card.automated h4 {
+            color: #10b981;
+        }
+        
+        .step {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .step:last-child { border-bottom: none; }
+        .step strong { color: #0f172a; }
+        .step .time {
+            color: #64748b;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .time-saved {
+            background: #10b981;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .time-saved h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .time-saved p {
+            font-size: 1.1rem;
+        }
+        
+        .integration-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .integration-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #3b82f6;
+        }
+        .integration-item strong {
+            display: block;
+            color: #0f172a;
+            margin-bottom: 0.25rem;
+        }
+        .integration-item span {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .pricing {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        .pricing h4 {
+            font-size: 1.3rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        .pricing-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .pricing-item:last-child { border-bottom: none; }
+        .pricing-item strong {
+            font-size: 1.1rem;
+            color: #3b82f6;
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+            margin-top: 2rem;
+        }
+        .case-study h4 {
+            font-size: 1.2rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        .case-study ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+        .case-study li {
+            padding: 0.25rem 0;
+            color: #475569;
+        }
+        .case-study .roi {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-top: 1rem;
+        }
+        
+        .cta {
+            background: #0f172a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-radius: 8px;
+        }
+        .cta h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .cta p {
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Covenant Systems AI | <a href="/">← Back to Home</a></h1>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <div class="container">
+            <h2>Client Intake Automation - Demo Workflow</h2>
+            <p>Eliminate 90% of manual intake work with intelligent automation</p>
+            <div class="stat">Time Saved: 113 minutes per new client</div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <section>
+            <h3>The Problem: Manual Intake Kills Billable Time</h3>
+            <p>Every new client requires the same repetitive admin work: data entry, document generation, e-signature routing, system updates. For most firms, that's 1.5-2 hours of non-billable time per client.</p>
+            <p style="margin-top: 1rem; color: #64748b;">At 8 new clients per month, you're losing 16 hours of billable capacity — over $4,000 in lost revenue for a typical solo practitioner.</p>
+        </section>
+        
+        <section>
+            <h3>Before & After: See the Difference</h3>
+            <div class="process-comparison">
+                <div class="process-card">
+                    <h4>❌ Manual Process</h4>
+                    <div class="step">
+                        <strong>1. Review intake form</strong><br>
+                        <span class="time">20 minutes</span>
+                    </div>
+                    <div class="step">
+                        <strong>2. Copy data to CRM/PM system</strong><br>
+                        <span class="time">20 minutes</span>
+                    </div>
+                    <div class="step">
+                        <strong>3. Attorney case review</strong><br>
+                        <span class="time">15 minutes</span>
+                    </div>
+                    <div class="step">
+                        <strong>4. Generate engagement letter</strong><br>
+                        <span class="time">25 minutes</span>
+                    </div>
+                    <div class="step">
+                        <strong>5. Send for signature & follow up</strong><br>
+                        <span class="time">30+ minutes</span>
+                    </div>
+                    <div class="step">
+                        <strong>6. Create matter, send welcome email</strong><br>
+                        <span class="time">15 minutes</span>
+                    </div>
+                    <p style="margin-top: 1rem; font-weight: bold; color: #ef4444;">Total: 115+ minutes</p>
+                </div>
+                
+                <div class="process-card automated">
+                    <h4>✓ Automated Workflow</h4>
+                    <div class="step">
+                        <strong>1. Smart form validates data</strong><br>
+                        <span class="time">0 minutes (automatic)</span>
+                    </div>
+                    <div class="step">
+                        <strong>2. AI populates CRM/PM system</strong><br>
+                        <span class="time">0 minutes (automatic)</span>
+                    </div>
+                    <div class="step">
+                        <strong>3. Attorney reviews AI summary</strong><br>
+                        <span class="time">2 minutes</span>
+                    </div>
+                    <div class="step">
+                        <strong>4. AI generates engagement letter</strong><br>
+                        <span class="time">0 minutes (automatic)</span>
+                    </div>
+                    <div class="step">
+                        <strong>5. Auto-send with signature reminders</strong><br>
+                        <span class="time">0 minutes (automatic)</span>
+                    </div>
+                    <div class="step">
+                        <strong>6. Matter created, welcome sent</strong><br>
+                        <span class="time">0 minutes (automatic)</span>
+                    </div>
+                    <p style="margin-top: 1rem; font-weight: bold; color: #10b981;">Total: 2 minutes</p>
+                </div>
+            </div>
+            
+            <div class="time-saved">
+                <h4>113 Minutes Saved Per Client</h4>
+                <p>Or 15+ billable hours reclaimed per month at 8 clients/month</p>
+            </div>
+        </section>
+        
+        <section>
+            <h3>How the Automation Works</h3>
+            <p><strong>Step 1: Smart Intake Form</strong><br>
+            Prospect completes web form. AI validates completeness and flags missing information. Form auto-saves securely.</p>
+            
+            <p style="margin-top: 1rem;"><strong>Step 2: Intelligent Routing</strong><br>
+            AI analyzes practice area, case complexity, and budget. Routes to appropriate attorney. Flags potential conflicts of interest.</p>
+            
+            <p style="margin-top: 1rem;"><strong>Step 3: Practice Management Integration</strong><br>
+            Contact details auto-populate in Clio/MyCase/PracticePanther. Case summary and documents populate automatically. Matter number generated.</p>
+            
+            <p style="margin-top: 1rem;"><strong>Step 4: Engagement Letter Generation</strong><br>
+            AI generates customized engagement letter using your firm templates. Attorney reviews and approves (or edits). Takes 2 minutes instead of 25.</p>
+            
+            <p style="margin-top: 1rem;"><strong>Step 5: E-Signature & Follow-Up</strong><br>
+            Engagement letter sent via DocuSign/HelloSign automatically. Reminder emails at 3 days and 7 days if not signed. Attorney notified when complete.</p>
+            
+            <p style="margin-top: 1rem;"><strong>Step 6: Onboarding Automation</strong><br>
+            Welcome email with client portal access sent automatically. Initial document requests sent based on practice area. Calendar invite for kickoff call generated.</p>
+        </section>
+        
+        <section>
+            <h3>Technical Integration</h3>
+            <p>This workflow integrates with the tools you already use. No new software to learn.</p>
+            
+            <div class="integration-list">
+                <div class="integration-item">
+                    <strong>Practice Management</strong>
+                    <span>Clio, MyCase, PracticePanther, Smokeball, CosmoLex</span>
+                </div>
+                <div class="integration-item">
+                    <strong>E-Signature</strong>
+                    <span>DocuSign, HelloSign, PandaDoc, Adobe Sign</span>
+                </div>
+                <div class="integration-item">
+                    <strong>Email & Calendar</strong>
+                    <span>Google Workspace, Microsoft 365</span>
+                </div>
+                <div class="integration-item">
+                    <strong>Document Storage</strong>
+                    <span>Google Drive, Dropbox, OneDrive, NetDocuments</span>
+                </div>
+                <div class="integration-item">
+                    <strong>Payment Processing</strong>
+                    <span>LawPay, Clio Payments, CPACharge</span>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h3>What You Own</h3>
+            <ul style="list-style: none; margin-top: 1rem;">
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Custom-built workflow integrated with YOUR systems</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Your templates, your branding, your processes</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Full documentation and training</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ 30 days of hands-on support and refinement</li>
+                <li style="padding: 0.5rem 0;">✓ No ongoing subscription required (optional monthly support available)</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h3>Pricing</h3>
+            <div class="pricing">
+                <div class="pricing-item">
+                    <strong>One-Time Build: $2,500-$3,500</strong><br>
+                    <span style="color: #64748b;">Includes: Assessment, custom workflow build, integration, testing, documentation, training, 30-day support</span>
+                </div>
+                <div class="pricing-item">
+                    <strong>Optional Monthly Support: $500/month</strong><br>
+                    <span style="color: #64748b;">Workflow updates, new automation additions, priority support, monthly optimization review</span>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h3>Case Study Example</h3>
+            <div class="case-study">
+                <h4>Solo Family Law Attorney, Chapel Hill NC</h4>
+                <p><strong>Before Automation:</strong></p>
+                <ul>
+                    <li>• 8 new clients per month</li>
+                    <li>• 2 hours per intake manually</li>
+                    <li>• 16 hours/month spent on intake admin work</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>After Automation:</strong></p>
+                <ul>
+                    <li>• 15 minutes per intake (attorney review only)</li>
+                    <li>• 2 hours/month spent on intake</li>
+                    <li>• 14 hours/month reclaimed for billable work</li>
+                </ul>
+                <div class="roi">
+                    At $275/hour billing rate: $3,850/month in recovered billable time<br>
+                    ROI on $3,000 build: Pays for itself in 23 days
+                </div>
+            </div>
+        </section>
+        
+        <div class="cta">
+            <h3>See This In Action</h3>
+            <p>Book a free 30-minute assessment. We'll review your current intake process and show you exactly what's possible.</p>
+            <a href="mailto:hello@covenantsystems.ai?subject=Assessment%20Request%20-%20Client%20Intake%20Automation&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ACurrent%20intake%20volume%20(clients/month):%0D%0APreferred%20call%20times:" class="cta-button">Book Free Assessment</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Covenant Systems AI LLC | North Carolina | hello@covenantsystems.ai</p>
+        </div>
+    </footer>
+</body>
+</html>
