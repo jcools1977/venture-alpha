@@ -248,6 +248,76 @@
             margin-top: 0.5rem;
         }
         
+        .contact-form-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        .contact-form-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #0a0f1e;
+            font-weight: 700;
+        }
+        .contact-form-section .intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 3rem;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #0a0f1e;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4f46e5;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-button {
+            width: 100%;
+            background: #4f46e5;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .submit-button:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+        }
+        
         .pricing {
             padding: 5rem 0;
             background: #0a0f1e;
@@ -310,7 +380,7 @@
         
         .how-it-works {
             padding: 5rem 0;
-            background: #f8fafc;
+            background: white;
         }
         .how-it-works h3 {
             font-size: 2.5rem;
@@ -349,39 +419,6 @@
             line-height: 1.6;
         }
         
-        .final-cta {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
-            text-align: center;
-            color: white;
-        }
-        .final-cta h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        .final-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            color: #e0e7ff;
-        }
-        .cta-button-white {
-            display: inline-block;
-            background: white;
-            color: #4f46e5;
-            padding: 1.1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.15rem;
-            margin: 0.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .cta-button-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-        }
-        
         footer {
             padding: 2.5rem 0;
             background: #0a0f1e;
@@ -403,7 +440,7 @@
             <h2>Stop Losing Billable Hours<br>to Admin Work</h2>
             <p class="subhead">AI-powered workflow automation built specifically for solo and small law firms. Reclaim 10-20 hours per week from client intake, document generation, and client communication.</p>
             <div>
-                <a href="mailto:hello@covenantsystems.ai?subject=Free%20Automation%20Assessment%20Request&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ABiggest%20time%20drain:%0D%0A" class="cta-button">Book Free Assessment</a>
+                <a href="#contact" class="cta-button">Book Free Assessment</a>
                 <a href="#case-study" class="cta-button secondary">See Real Results</a>
             </div>
         </div>
@@ -604,11 +641,44 @@
         </div>
     </section>
     
-    <section class="final-cta">
+    <section class="contact-form-section" id="contact">
         <div class="container">
-            <h3>Ready to Reclaim 10+ Hours Per Week?</h3>
-            <p>Start with a free 30-minute assessment. No obligation. Just honest analysis of where automation can help your firm.</p>
-            <a href="mailto:hello@covenantsystems.ai?subject=Free%20Automation%20Assessment%20Request&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ABiggest%20time%20drain:%0D%0A" class="cta-button-white">Book Free Assessment</a>
+            <h3>Book Your Free Assessment</h3>
+            <p class="intro">30-minute call. No obligation. Just honest analysis of where automation can help your firm.</p>
+            
+            <form class="contact-form" action="https://formspree.io/f/xgvebjkd" method="POST">
+                <div class="form-group">
+                    <label for="firm_name">Firm Name *</label>
+                    <input type="text" id="firm_name" name="firm_name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="practice_areas">Practice Areas</label>
+                    <input type="text" id="practice_areas" name="practice_areas" placeholder="e.g. Family Law, Estate Planning">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">What's your biggest time drain? *</label>
+                    <textarea id="message" name="message" required placeholder="Client intake? Document drafting? Status updates?"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Request Free Assessment</button>
+            </form>
         </div>
     </section>
     
