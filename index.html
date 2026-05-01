@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covenant Systems - AI Workflow Automation for Law Firms</title>
+    <meta name="description" content="Reclaim 15+ billable hours per month. AI-powered workflow automation built specifically for solo and small law firms.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        header { 
+            background: #0a0f1e;
+            color: white;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #4f46e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { 
+            font-size: 1.5rem; 
+            font-weight: 700;
+            color: white;
+        }
+        nav a {
+            color: #818cf8;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+        }
+        nav a:hover { color: #a5b4fc; }
+        
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #0a0f1e 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+        }
+        .hero h2 { 
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero .cta-primary {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            transition: all 0.2s;
+        }
+        .hero .cta-primary:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+        }
+        .hero .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 2px solid #4f46e5;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+        .hero .cta-secondary:hover {
+            background: rgba(79, 70, 229, 0.1);
+        }
+        
+        .value-prop {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        .value-prop h3 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0a0f1e;
+        }
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .benefit-card h4 {
+            font-size: 1.5rem;
+            color: #4f46e5;
+            margin-bottom: 1rem;
+        }
+        .benefit-card p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        .benefit-card .stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #10b981;
+            margin-top: 1rem;
+        }
+        
+        .how-it-works {
+            padding: 5rem 0;
+            background: white;
+        }
+        .how-it-works h3 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0a0f1e;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .step-number {
+            background: #4f46e5;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        .step h4 {
+            font-size: 1.2rem;
+            color: #0a0f1e;
+            margin-bottom: 0.5rem;
+        }
+        .step p {
+            color: #64748b;
+        }
+        
+        .social-proof {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        }
+        .social-proof h3 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0a0f1e;
+        }
+        .case-study {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-left: 4px solid #4f46e5;
+        }
+        .case-study h4 {
+            font-size: 1.5rem;
+            color: #0a0f1e;
+            margin-bottom: 1rem;
+        }
+        .case-study ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        .case-study li {
+            padding: 0.5rem 0;
+            color: #475569;
+        }
+        .case-study .roi {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #10b981;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .cta-section {
+            padding: 5rem 0;
+            background: #0a0f1e;
+            color: white;
+            text-align: center;
+        }
+        .cta-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+        .cta-section .cta-button {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+        .cta-section .cta-button:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            background: #0a0f1e;
+            border-top: 1px solid #1e293b;
+        }
+        footer p { margin: 0.5rem 0; }
+        footer a {
+            color: #818cf8;
+            text-decoration: none;
+        }
+        footer a:hover { color: #a5b4fc; }
+        
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero .cta-primary, .hero .cta-secondary {
+                display: block;
+                margin: 0.5rem auto;
+                max-width: 300px;
+            }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Covenant Systems</h1>
+            <nav>
+                <a href="#how-it-works">How It Works</a>
+                <a href="/demo-workflow.html">See Demo</a>
+                <a href="/automation-assessment.html">Free Assessment</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>Reclaim 15+ Billable Hours Per Month</h2>
+            <p>AI-powered workflow automation built specifically for solo and small law firms</p>
+            <a href="mailto:hello@covenantsystems.ai?subject=Assessment%20Request&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ABiggest%20time%20drain:%0D%0APreferred%20call%20times:" class="cta-primary">Book Free Assessment</a>
+            <a href="/demo-workflow.html" class="cta-secondary">See How It Works</a>
+        </div>
+    </section>
+    
+    <section class="value-prop">
+        <div class="container">
+            <h3>Stop Losing Money to Manual Admin Work</h3>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h4>Client Intake</h4>
+                    <p>From 2 hours of manual data entry, document generation, and e-signature routing down to 2 minutes of attorney review.</p>
+                    <div class="stat">113 min saved per client</div>
+                </div>
+                <div class="benefit-card">
+                    <h4>Document Generation</h4>
+                    <p>AI generates engagement letters, contracts, and routine filings from your templates in seconds. You review and approve.</p>
+                    <div class="stat">25 min → 2 min</div>
+                </div>
+                <div class="benefit-card">
+                    <h4>Client Communication</h4>
+                    <p>Automated status updates, appointment reminders, document requests, and follow-ups. Set it once, run forever.</p>
+                    <div class="stat">5-10 hrs/week reclaimed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h3>How It Works</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Free Assessment</h4>
+                    <p>30-minute call to review your current workflows and identify automation opportunities</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Custom Build</h4>
+                    <p>We build automation tailored to YOUR practice areas, templates, and existing systems</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Integration & Training</h4>
+                    <p>Connect to Clio/MyCase/PracticePanther, test with real cases, train your team</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>You Own It</h4>
+                    <p>Full handoff with documentation. Optional monthly support available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="social-proof">
+        <div class="container">
+            <h3>Real Results</h3>
+            <div class="case-study">
+                <h4>Solo Family Law Attorney, Chapel Hill NC</h4>
+                <p><strong>Before Automation:</strong></p>
+                <ul>
+                    <li>• 8 new clients per month</li>
+                    <li>• 2 hours per intake manually</li>
+                    <li>• 16 hours/month spent on admin work</li>
+                    <li>• Engagement letters took 3-5 days to finalize</li>
+                </ul>
+                <p style="margin-top: 1.5rem;"><strong>After Automation:</strong></p>
+                <ul>
+                    <li>• 15 minutes per intake (attorney review only)</li>
+                    <li>• 2 hours/month spent on intake</li>
+                    <li>• 14 hours/month reclaimed for billable work</li>
+                    <li>• Engagement letters finalized same-day</li>
+                </ul>
+                <div class="roi">
+                    $3,850/month in recovered billable time (at $275/hr)<br>
+                    Investment paid for itself in 23 days
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h3>Ready to Reclaim Your Time?</h3>
+            <p>Book a free 30-minute assessment. No sales pitch. We'll show you exactly what's possible for your firm.</p>
+            <a href="mailto:hello@covenantsystems.ai?subject=Assessment%20Request&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ABiggest%20time%20drain:%0D%0APreferred%20call%20times:" class="cta-button">Book Free Assessment</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p><strong>Covenant Systems AI LLC</strong></p>
+            <p>North Carolina | <a href="mailto:hello@covenantsystems.ai">hello@covenantsystems.ai</a></p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">
+                <a href="/privacy.html">Privacy Policy</a> | 
+                <a href="/terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
