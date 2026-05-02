@@ -215,35 +215,78 @@
             border-top: 2px solid #e2e8f0;
         }
         
-        .cta-section {
+        .contact-section {
             padding: 5rem 0;
             background: #0a0f1e;
             color: white;
-            text-align: center;
         }
-        .cta-section h3 {
+        .contact-section h3 {
             font-size: 2.5rem;
+            text-align: center;
             margin-bottom: 1rem;
         }
-        .cta-section p {
+        .contact-section > p {
             font-size: 1.2rem;
             color: #cbd5e1;
-            margin-bottom: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        .cta-section .cta-button {
-            display: inline-block;
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1e293b;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #475569;
+            border-radius: 4px;
+            background: #0f172a;
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .submit-button {
+            width: 100%;
             background: #4f46e5;
             color: white;
-            padding: 1.25rem 3rem;
-            text-decoration: none;
-            border-radius: 8px;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
             transition: all 0.2s;
         }
-        .cta-section .cta-button:hover {
+        .submit-button:hover {
             background: #4338ca;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
+        }
+        .submit-button:active {
+            transform: translateY(0);
         }
         
         footer {
@@ -270,6 +313,9 @@
                 max-width: 300px;
             }
             nav { display: none; }
+            .contact-form {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -290,7 +336,7 @@
         <div class="container">
             <h2>Reclaim 15+ Billable Hours Per Month</h2>
             <p>AI-powered workflow automation built specifically for solo and small law firms</p>
-            <a href="mailto:hello@covenantsystems.ai?subject=Assessment%20Request&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ABiggest%20time%20drain:%0D%0APreferred%20call%20times:" class="cta-primary">Book Free Assessment</a>
+            <a href="#contact" class="cta-primary">Book Free Assessment</a>
             <a href="/demo-workflow.html" class="cta-secondary">See How It Works</a>
         </div>
     </section>
@@ -373,11 +419,47 @@
         </div>
     </section>
     
-    <section class="cta-section">
+    <section class="contact-section" id="contact">
         <div class="container">
             <h3>Ready to Reclaim Your Time?</h3>
             <p>Book a free 30-minute assessment. No sales pitch. We'll show you exactly what's possible for your firm.</p>
-            <a href="mailto:hello@covenantsystems.ai?subject=Assessment%20Request&body=Firm%20Name:%0D%0AYour%20Name:%0D%0APhone:%0D%0APractice%20Areas:%0D%0ABiggest%20time%20drain:%0D%0APreferred%20call%20times:" class="cta-button">Book Free Assessment</a>
+            
+            <form class="contact-form" action="https://formspree.io/f/xvgoqbrj" method="POST">
+                <div class="form-group">
+                    <label for="firm_name">Firm Name *</label>
+                    <input type="text" id="firm_name" name="firm_name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="practice_areas">Practice Areas</label>
+                    <input type="text" id="practice_areas" name="practice_areas" placeholder="e.g., Family Law, Personal Injury">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">What's your biggest time drain?</label>
+                    <textarea id="message" name="message" placeholder="Tell us what takes up most of your time..."></textarea>
+                </div>
+                
+                <input type="hidden" name="_subject" value="New Assessment Request - Covenant Systems">
+                <input type="text" name="_gotcha" style="display:none">
+                
+                <button type="submit" class="submit-button">Request Free Assessment</button>
+            </form>
         </div>
     </section>
     
