@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Documentation - Covenant Systems</title>
+    <meta name="description" content="Technical product specifications, implementation methodology, and delivery documentation for law firm workflow automation.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8fafc;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        header { 
+            background: #0a0f1e;
+            color: white;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #4f46e5;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { 
+            font-size: 1.5rem; 
+            font-weight: 700;
+        }
+        header a {
+            color: #818cf8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        header a:hover { color: #a5b4fc; }
+        
+        .hero {
+            padding: 4rem 0 3rem;
+            background: linear-gradient(135deg, #0a0f1e 0%, #1e293b 100%);
+            color: white;
+        }
+        .hero h2 { 
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 800px;
+        }
+        
+        .content {
+            padding: 4rem 0;
+            background: white;
+        }
+        .content h3 {
+            font-size: 2rem;
+            color: #0a0f1e;
+            margin-bottom: 1.5rem;
+        }
+        .content p {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .doc-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .doc-card:hover {
+            border-color: #4f46e5;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+        }
+        .doc-card h4 {
+            font-size: 1.5rem;
+            color: #4f46e5;
+            margin-bottom: 1rem;
+        }
+        .doc-card p {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .doc-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .doc-card li {
+            padding: 0.5rem 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        .doc-card li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+        .doc-link {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .doc-link:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+        }
+        
+        .audience {
+            background: #eff6ff;
+            padding: 3rem 0;
+        }
+        .audience h3 {
+            font-size: 2rem;
+            color: #0a0f1e;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .audience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #dbeafe;
+        }
+        .audience-card h4 {
+            font-size: 1.3rem;
+            color: #4f46e5;
+            margin-bottom: 0.75rem;
+        }
+        .audience-card p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            background: #0a0f1e;
+        }
+        footer a {
+            color: #818cf8;
+            text-decoration: none;
+        }
+        footer a:hover { color: #a5b4fc; }
+        
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .doc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Covenant Systems</h1>
+            <a href="/">← Back to Home</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>Product Documentation</h2>
+            <p>Complete technical specifications, implementation methodology, and delivery documentation for law firm workflow automation.</p>
+        </div>
+    </section>
+    
+    <section class="content">
+        <div class="container">
+            <h3>What We Actually Deliver</h3>
+            <p>We believe in transparency. These documents define exactly what clients receive when they work with Covenant Systems — from technical architecture through final handoff.</p>
+            
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h4>Product Specifications</h4>
+                    <p>The complete definition of our law firm workflow automation product.</p>
+                    <ul>
+                        <li>Three core automation modules</li>
+                        <li>Technical architecture and infrastructure</li>
+                        <li>Client deliverables checklist</li>
+                        <li>Implementation timeline (4-5 weeks)</li>
+                        <li>Pricing structure and ROI metrics</li>
+                        <li>Security and compliance standards</li>
+                    </ul>
+                    <a href="https://docs.google.com/document/d/1joLyLUQ3RvAwcAz8Y3OUj4kW7ryVgyyxghPWA0u3cUo" target="_blank" class="doc-link">View Product Specs →</a>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>Implementation Runbook</h4>
+                    <p>Step-by-step technical guide for delivering workflow automation from contract signing through go-live.</p>
+                    <ul>
+                        <li>Week-by-week implementation tasks</li>
+                        <li>Discovery call agenda and templates</li>
+                        <li>Build & integration methodology</li>
+                        <li>Testing and quality control checklists</li>
+                        <li>Training session structure</li>
+                        <li>Common pitfalls and solutions</li>
+                    </ul>
+                    <a href="https://docs.google.com/document/d/1YAj5-iOx_6ynj43tsn1TDuUOt8TcfNcpPCin1rwTqx8" target="_blank" class="doc-link">View Runbook →</a>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>Client Handoff Package</h4>
+                    <p>Everything a client receives at project completion to manage automation independently.</p>
+                    <ul>
+                        <li>Admin credentials for all platforms</li>
+                        <li>Workflow diagrams and documentation</li>
+                        <li>User guides and training videos</li>
+                        <li>Merge field reference guide</li>
+                        <li>Troubleshooting FAQ</li>
+                        <li>30-day support schedule</li>
+                    </ul>
+                    <a href="https://docs.google.com/document/d/1iIvOfHagBXIKDrIPx5mlNbJP0T_t3sSME_yHjqhchBs" target="_blank" class="doc-link">View Handoff Template →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="audience">
+        <div class="container">
+            <h3>Who These Docs Are For</h3>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <h4>Prospects</h4>
+                    <p>See exactly what you'll receive before signing a contract. No vaporware, no hand-waving — just clear technical specifications and deliverables.</p>
+                </div>
+                <div class="audience-card">
+                    <h4>Clients</h4>
+                    <p>Reference documentation during and after implementation. Understand how your automation works and how to maintain it independently.</p>
+                </div>
+                <div class="audience-card">
+                    <h4>Technical Partners</h4>
+                    <p>Integrate with our delivery process or replicate our methodology. We believe in open documentation and knowledge sharing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content">
+        <div class="container">
+            <h3>Why We Document Everything</h3>
+            <p>Most consulting firms sell vague promises and deliver inconsistent results. We believe clients deserve to know exactly what they're buying, how it will be built, and what they'll own at the end.</p>
+            
+            <p>These documents represent our commitment to:</p>
+            <ul style="list-style: disc; margin-left: 2rem; color: #475569; font-size: 1.1rem; line-height: 1.8;">
+                <li><strong>Transparency:</strong> No surprises, no scope creep, no hidden costs</li>
+                <li><strong>Quality:</strong> Repeatable methodology with built-in quality gates</li>
+                <li><strong>Client Ownership:</strong> You own the automation, not us — full handoff with documentation</li>
+                <li><strong>Continuous Improvement:</strong> We version and update these docs based on real delivery experience</li>
+            </ul>
+            
+            <p style="margin-top: 2rem;">Questions about our product or methodology? Email us at <a href="mailto:hello@covenantsystems.ai" style="color: #4f46e5; text-decoration: none; font-weight: 600;">hello@covenantsystems.ai</a></p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p><strong>Covenant Systems AI LLC</strong> | North Carolina</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="/">Home</a> | 
+                <a href="/blog.html">Blog</a> | 
+                <a href="/story.html">Our Story</a> | 
+                <a href="mailto:hello@covenantsystems.ai">Contact</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
