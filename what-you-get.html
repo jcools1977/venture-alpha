@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What You Actually Get - Covenant Systems</title>
+    <meta name="description" content="Exact technical deliverables: 3 n8n workflow templates, setup guides, demo videos, and full documentation. No vaporware.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        header { 
+            background: #0a0f1e;
+            color: white;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #4f46e5;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { 
+            font-size: 1.5rem; 
+            font-weight: 700;
+        }
+        header a {
+            color: #818cf8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        header a:hover { color: #a5b4fc; }
+        
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #0a0f1e 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+        }
+        .hero h2 { 
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .deliverables {
+            padding: 5rem 0;
+            background: white;
+        }
+        .deliverables h3 {
+            font-size: 2.5rem;
+            color: #0a0f1e;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .deliverables .subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .workflow-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-left: 6px solid #4f46e5;
+        }
+        .workflow-card h4 {
+            font-size: 1.8rem;
+            color: #4f46e5;
+            margin-bottom: 1rem;
+        }
+        .workflow-card .summary {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .workflow-card .tech-stack {
+            background: #eff6ff;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+        }
+        .workflow-card .tech-stack strong {
+            color: #1e40af;
+        }
+        .workflow-card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        .workflow-card li {
+            padding: 0.5rem 0;
+            color: #475569;
+            font-size: 1.05rem;
+        }
+        .workflow-card li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+        .workflow-card .roi {
+            background: #ecfdf5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #10b981;
+        }
+        .workflow-card .roi strong {
+            font-size: 1.3rem;
+            color: #047857;
+        }
+        
+        .package {
+            background: #f8fafc;
+            padding: 4rem 0;
+        }
+        .package h3 {
+            font-size: 2.5rem;
+            color: #0a0f1e;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .package-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .package-item h4 {
+            font-size: 1.3rem;
+            color: #0a0f1e;
+            margin-bottom: 1rem;
+        }
+        .package-item p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .pricing {
+            padding: 5rem 0;
+            background: white;
+        }
+        .pricing h3 {
+            font-size: 2.5rem;
+            color: #0a0f1e;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .pricing-card.featured {
+            border-color: #4f46e5;
+            box-shadow: 0 8px 24px rgba(79, 70, 229, 0.2);
+            transform: scale(1.05);
+        }
+        .pricing-card h4 {
+            font-size: 1.5rem;
+            color: #0a0f1e;
+            margin-bottom: 1rem;
+        }
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4f46e5;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-card .frequency {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .pricing-card li {
+            padding: 0.75rem 0;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .pricing-card li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .cta-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #e0e7ff;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #4f46e5;
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            background: #0a0f1e;
+        }
+        footer a {
+            color: #818cf8;
+            text-decoration: none;
+        }
+        footer a:hover { color: #a5b4fc; }
+        
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .pricing-card.featured { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Covenant Systems</h1>
+            <a href="/">← Back to Home</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>What You Actually Get</h2>
+            <p>No vaporware. No hand-waving. Here are the exact technical deliverables you receive when you work with us.</p>
+        </div>
+    </section>
+    
+    <section class="deliverables">
+        <div class="container">
+            <h3>3 Working n8n Workflow Templates</h3>
+            <p class="subtitle">Ready-to-use automation workflows you import into your n8n instance and customize for your firm</p>
+            
+            <div class="workflow-card">
+                <h4>Workflow 1: Client Intake Automation</h4>
+                <p class="summary">From website form submission to signed engagement letter in 15 minutes instead of 2 hours</p>
+                
+                <div class="tech-stack">
+                    <strong>Integrations:</strong> Formspree → n8n → Clio API → DocuSign → Gmail
+                </div>
+                
+                <strong>What It Does:</strong>
+                <ul>
+                    <li>Captures client inquiry from website form (Formspree webhook trigger)</li>
+                    <li>Validates required fields and formats contact data</li>
+                    <li>Checks for conflicts in Clio CRM (duplicate client detection)</li>
+                    <li>Creates new contact + matter in Clio automatically</li>
+                    <li>Generates personalized engagement letter from template</li>
+                    <li>Sends engagement letter via DocuSign for e-signature</li>
+                    <li>Sends welcome email to client with next steps</li>
+                    <li>Creates follow-up task for attorney in Clio</li>
+                    <li>Logs all activity to Google Sheet for tracking</li>
+                </ul>
+                
+                <div class="roi">
+                    <strong>Time Saved:</strong> 113 minutes per client → 15 minutes (attorney reviews conflict check + approves letter)
+                </div>
+            </div>
+            
+            <div class="workflow-card">
+                <h4>Workflow 2: AI Document Generation</h4>
+                <p class="summary">Generate legal documents from templates using AI in 2 minutes instead of 25 minutes</p>
+                
+                <div class="tech-stack">
+                    <strong>Integrations:</strong> Google Sheets → n8n → OpenAI/Claude → Google Docs → Clio
+                </div>
+                
+                <strong>What It Does:</strong>
+                <ul>
+                    <li>Triggers when attorney fills simple request form (Google Sheet or Airtable)</li>
+                    <li>Pulls client data + case details from form</li>
+                    <li>AI generates draft document from template library (10 common types included)</li>
+                    <li>Creates Google Doc with AI-generated content + formatting</li>
+                    <li>Sends shareable link to attorney for review/editing</li>
+                    <li>After attorney approval, converts to PDF</li>
+                    <li>Uploads final PDF to Clio document vault</li>
+                    <li>Optional: Auto-send to client via email</li>
+                </ul>
+                
+                <strong>Included Document Templates:</strong>
+                <ul>
+                    <li>Engagement letters, demand letters, settlement agreements</li>
+                    <li>Motion templates, discovery responses, status update letters</li>
+                    <li>Fee dispute resolutions, termination letters, conflict waivers</li>
+                </ul>
+                
+                <div class="roi">
+                    <strong>Time Saved:</strong> 25 minutes → 2 minutes (attorney reviews AI draft instead of writing from scratch)
+                </div>
+            </div>
+            
+            <div class="workflow-card">
+                <h4>Workflow 3: Client Communication Automation</h4>
+                <p class="summary">Eliminate 5-10 hours/week of manual status update emails and appointment reminders</p>
+                
+                <div class="tech-stack">
+                    <strong>Integrations:</strong> Clio API → n8n → Gmail/Twilio (SMS)
+                </div>
+                
+                <strong>What It Does:</strong>
+                <ul>
+                    <li>Runs every 4 hours (9am, 1pm, 5pm weekdays)</li>
+                    <li>Checks Clio for case status changes and upcoming court dates</li>
+                    <li>Triggers personalized messages based on case milestones:
+                        <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                            <li>• Case opened → Welcome message</li>
+                            <li>• Documents needed → Document request email</li>
+                            <li>• Court date in 3 days → Reminder with details</li>
+                            <li>• Case closed → Thank you + final invoice</li>
+                        </ul>
+                    </li>
+                    <li>Prevents duplicate messages (checks communication log)</li>
+                    <li>Sends via email (Gmail) or SMS (Twilio)</li>
+                    <li>Logs all communications back to Clio timeline</li>
+                </ul>
+                
+                <strong>Included Message Templates:</strong>
+                <ul>
+                    <li>5 pre-written templates (customizable for your firm's tone)</li>
+                    <li>Merge fields for client name, case type, attorney, dates</li>
+                </ul>
+                
+                <div class="roi">
+                    <strong>Time Saved:</strong> 5-10 hours/week (eliminates manual "checking in" emails)
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="package">
+        <div class="container">
+            <h3>Complete Delivery Package</h3>
+            <div class="package-grid">
+                <div class="package-item">
+                    <h4>📄 Workflow JSON Files</h4>
+                    <p>3 n8n workflow templates (client-intake-workflow.json, document-generation-workflow.json, client-communication-workflow.json) — import into your n8n instance and customize</p>
+                </div>
+                
+                <div class="package-item">
+                    <h4>📖 Setup Guide (40 pages)</h4>
+                    <p>Step-by-step instructions with screenshots for API credential setup, n8n deployment, workflow import, and customization. Written for non-technical staff.</p>
+                </div>
+                
+                <div class="package-item">
+                    <h4>🎥 Demo Videos</h4>
+                    <p>3 Loom videos (5-7 minutes each) showing each workflow executing end-to-end. Watch before setup, reference during troubleshooting.</p>
+                </div>
+                
+                <div class="package-item">
+                    <h4>📋 Template Libraries</h4>
+                    <p>10 AI document prompts (engagement letters, motions, etc.) + 5 client message templates — all customizable for your firm</p>
+                </div>
+                
+                <div class="package-item">
+                    <h4>☎️ 1-Hour Onboarding Call</h4>
+                    <p>Screen-share setup assistance: connect your Clio account, import workflows, test with real data, answer questions</p>
+                </div>
+                
+                <div class="package-item">
+                    <h4>✉️ 30 Days Email Support</h4>
+                    <p>Questions after setup? We respond within 24 hours (business days). Common issues: API credential troubleshooting, workflow customization, integration debugging</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing">
+        <div class="container">
+            <h3>Simple Pricing</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Self-Hosted</h4>
+                    <div class="price">$2,500</div>
+                    <div class="frequency">One-time</div>
+                    <ul>
+                        <li>3 n8n workflow templates (JSON files)</li>
+                        <li>40-page setup guide + videos</li>
+                        <li>You host n8n on your server</li>
+                        <li>You manage API credentials</li>
+                        <li>1-hour onboarding call</li>
+                        <li>30 days email support</li>
+                        <li><strong>You own it forever</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h4>Managed Setup</h4>
+                    <div class="price">$3,500</div>
+                    <div class="frequency">One-time</div>
+                    <ul>
+                        <li><strong>Everything in Self-Hosted, plus:</strong></li>
+                        <li>We host n8n for you (our infrastructure)</li>
+                        <li>We handle all API credential setup</li>
+                        <li>2-hour training for your team</li>
+                        <li>90 days email support</li>
+                        <li>48-hour delivery timeline</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card">
+                    <h4>Managed + Support</h4>
+                    <div class="price">$3,500</div>
+                    <div class="frequency">+ $500/month</div>
+                    <ul>
+                        <li><strong>Everything in Managed Setup, plus:</strong></li>
+                        <li>Ongoing workflow updates</li>
+                        <li>Monthly optimization review call</li>
+                        <li>Priority support (24-hour response)</li>
+                        <li>Quarterly feature additions</li>
+                        <li>New workflow templates as released</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h3>Ready to See It Work?</h3>
+            <p>Book a 30-minute demo. We'll show you all 3 workflows running live.</p>
+            <a href="/#contact" class="cta-button">Book Free Demo →</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p><strong>Covenant Systems AI LLC</strong> | North Carolina</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="/">Home</a> | 
+                <a href="/blog.html">Blog</a> | 
+                <a href="/story.html">Our Story</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
