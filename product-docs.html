@@ -69,6 +69,24 @@
             line-height: 1.8;
         }
         
+        .banner {
+            background: #fef3c7;
+            border: 2px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .banner h4 {
+            color: #92400e;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .banner p {
+            color: #78350f;
+            font-size: 1rem;
+            margin: 0;
+        }
+        
         .doc-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -85,6 +103,13 @@
         .doc-card:hover {
             border-color: #4f46e5;
             box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+        }
+        .doc-card.featured {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        .doc-card.featured h4 {
+            color: #10b981;
         }
         .doc-card h4 {
             font-size: 1.5rem;
@@ -124,6 +149,12 @@
         .doc-link:hover {
             background: #4338ca;
             transform: translateY(-2px);
+        }
+        .doc-card.featured .doc-link {
+            background: #10b981;
+        }
+        .doc-card.featured .doc-link:hover {
+            background: #059669;
         }
         
         .audience {
@@ -194,22 +225,41 @@
     
     <section class="content">
         <div class="container">
+            <div class="banner">
+                <h4>🚀 NEW: Complete Technical Specification v1.0</h4>
+                <p>Now includes full n8n workflow architecture, API integration specs, AI document generation design, and visual demo walkthrough for discovery calls.</p>
+            </div>
+            
             <h3>What We Actually Deliver</h3>
             <p>We believe in transparency. These documents define exactly what clients receive when they work with Covenant Systems — from technical architecture through final handoff.</p>
             
             <div class="doc-grid">
-                <div class="doc-card">
-                    <h4>Technical Build Specification</h4>
-                    <p><strong>NEW:</strong> The complete technical definition of what we build, what technology we use, and what you own at handoff.</p>
+                <div class="doc-card featured">
+                    <h4>Technical Specification v1.0</h4>
+                    <p><strong>NEW (May 2026):</strong> The complete technical blueprint for law firm client intake automation. Everything from webhook triggers to Clio integration.</p>
                     <ul>
-                        <li>3 automation modules: intake, documents, communication</li>
-                        <li>Technology stack: Make.com + Clio/MyCase APIs</li>
-                        <li>12-step workflow specifications with time savings</li>
-                        <li>4-5 week implementation timeline</li>
-                        <li>Pricing: $3,500 + optional $500/month support</li>
-                        <li>Monthly ROI: $11,688-14,988 in reclaimed billable time</li>
+                        <li>n8n workflow architecture (12 connected nodes)</li>
+                        <li>AI document generation (GPT-4/Claude integration)</li>
+                        <li>Practice management APIs (Clio/MyCase)</li>
+                        <li>E-signature routing (DocuSign/Adobe Sign)</li>
+                        <li>Security & compliance standards</li>
+                        <li>21-30 day implementation timeline</li>
                     </ul>
-                    <a href="https://docs.google.com/document/d/1N1pjI1P3bVAhiFbWLVMfF_t3Iky6rWPqz2mA4-pxmTE" target="_blank" class="doc-link">View Technical Spec →</a>
+                    <a href="https://docs.google.com/document/d/1OOKMJ3CbSEFJ3pjKOJY3ceENoIl_asvqtqknhVG8yHk" target="_blank" class="doc-link">View Technical Spec →</a>
+                </div>
+                
+                <div class="doc-card featured">
+                    <h4>Visual Demo Guide</h4>
+                    <p><strong>NEW (May 2026):</strong> Complete discovery call walkthrough showing prospects exactly how the automation works—step by step with sample data.</p>
+                    <ul>
+                        <li>Full client journey (form submission to consultation)</li>
+                        <li>Before/after time comparison (120 min → 7 min)</li>
+                        <li>Sample AI-generated engagement letter</li>
+                        <li>ROI calculator ($49K+ annual savings)</li>
+                        <li>Objection handling cheat sheet</li>
+                        <li>Screen share ready</li>
+                    </ul>
+                    <a href="https://docs.google.com/document/d/1Q2T_D_5_XEFHlKxe7Fz0xk8fRF8G0kkTDj2ya95AgGA" target="_blank" class="doc-link">View Demo Guide →</a>
                 </div>
                 
                 <div class="doc-card">
