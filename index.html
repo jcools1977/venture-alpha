@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covenant Systems - AI Workflow Automation for Law Firms</title>
-    <meta name="description" content="Reclaim 15+ billable hours per month. AI-powered workflow automation built specifically for solo and small law firms.">
+    <title>Covenant Systems - AI Intelligence for CPA Firms</title>
+    <meta name="description" content="Daily intelligence briefings powered by AI. Stay ahead of regulatory changes, industry trends, and client opportunities without drowning in information overload.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -185,34 +185,32 @@
             margin-bottom: 2rem;
             color: #0a0f1e;
         }
-        .case-study {
+        .use-case {
             background: white;
             padding: 2rem;
             border-radius: 8px;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 2rem auto;
             border-left: 4px solid #4f46e5;
         }
-        .case-study h4 {
+        .use-case h4 {
             font-size: 1.5rem;
             color: #0a0f1e;
             margin-bottom: 1rem;
         }
-        .case-study ul {
+        .use-case ul {
             list-style: none;
             margin: 1rem 0;
         }
-        .case-study li {
+        .use-case li {
             padding: 0.5rem 0;
             color: #475569;
         }
-        .case-study .roi {
-            font-size: 1.3rem;
-            font-weight: 700;
+        .use-case li:before {
+            content: "✓ ";
             color: #10b981;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid #e2e8f0;
+            font-weight: 700;
+            margin-right: 0.5rem;
         }
         
         .transparency {
@@ -234,20 +232,17 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .transparency a {
-            display: inline-block;
-            background: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 6px;
-            border: 2px solid #4f46e5;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-        .transparency a:hover {
+        .transparency .beta-notice {
             background: rgba(79, 70, 229, 0.2);
-            border-color: #818cf8;
+            border: 2px solid #4f46e5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .transparency .beta-notice strong {
+            color: #a5b4fc;
+            font-size: 1.2rem;
         }
         
         .contact-section {
@@ -359,41 +354,39 @@
         <div class="container">
             <h1>Covenant Systems</h1>
             <nav>
-                <a href="/blog.html">Blog</a>
-                <a href="/product-docs.html">Product Docs</a>
-                <a href="/demo-workflow.html">Demo</a>
                 <a href="/story.html">Our Story</a>
+                <a href="mailto:hello@covenantsystems.ai">Contact</a>
             </nav>
         </div>
     </header>
     
     <section class="hero">
         <div class="container">
-            <h2>Reclaim 15+ Billable Hours Per Month</h2>
-            <p>AI-powered workflow automation built specifically for solo and small law firms</p>
-            <a href="#contact" class="cta-primary">Book Free Assessment</a>
-            <a href="/demo-workflow.html" class="cta-secondary">See How It Works</a>
+            <h2>Your Daily Intelligence Briefing, Before Your First Cup of Coffee</h2>
+            <p>Regulatory updates, industry trends, and client opportunities delivered to your inbox every morning. Built specifically for CPA firm owners who need to stay ahead without drowning in information overload.</p>
+            <a href="#contact" class="cta-primary">Join the Waitlist</a>
+            <a href="#how-it-works" class="cta-secondary">How It Works</a>
         </div>
     </section>
     
     <section class="value-prop">
         <div class="container">
-            <h3>Stop Losing Money to Manual Admin Work</h3>
+            <h3>Stop Drinking from the Fire Hose</h3>
             <div class="benefits">
                 <div class="benefit-card">
-                    <h4>Client Intake</h4>
-                    <p>From 2 hours of manual data entry, document generation, and e-signature routing down to 2 minutes of attorney review.</p>
-                    <div class="stat">113 min saved per client</div>
+                    <h4>Regulatory Intelligence</h4>
+                    <p>IRS updates, FASB changes, state tax modifications, and compliance deadlines summarized in plain language. Know what affects your clients before they ask.</p>
+                    <div class="stat">15 min/day → 3 min</div>
                 </div>
                 <div class="benefit-card">
-                    <h4>Document Generation</h4>
-                    <p>AI generates engagement letters, contracts, and routine filings from your templates in seconds. You review and approve.</p>
-                    <div class="stat">25 min → 2 min</div>
+                    <h4>Industry Trends</h4>
+                    <p>M&A activity, technology adoption, pricing benchmarks, and market shifts in accounting services. Position your firm ahead of competitors.</p>
+                    <div class="stat">Real-time insights</div>
                 </div>
                 <div class="benefit-card">
-                    <h4>Client Communication</h4>
-                    <p>Automated status updates, appointment reminders, document requests, and follow-ups. Set it once, run forever.</p>
-                    <div class="stat">5-10 hrs/week reclaimed</div>
+                    <h4>Client Opportunities</h4>
+                    <p>Identify advisory opportunities, cross-sell triggers, and risk alerts based on what's happening in your clients' industries.</p>
+                    <div class="stat">Proactive, not reactive</div>
                 </div>
             </div>
         </div>
@@ -401,71 +394,88 @@
     
     <section class="how-it-works" id="how-it-works">
         <div class="container">
-            <h3>How It Works</h3>
+            <h3>How Morning Briefing Works</h3>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h4>Free Assessment</h4>
-                    <p>30-minute call to review your current workflows and identify automation opportunities</p>
+                    <h4>AI Monitoring</h4>
+                    <p>Our system monitors 200+ sources: IRS, AICPA, state boards, industry publications, and regulatory feeds</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h4>Custom Build</h4>
-                    <p>We build automation tailored to YOUR practice areas, templates, and existing systems</p>
+                    <h4>Smart Filtering</h4>
+                    <p>AI filters for relevance, urgency, and impact on small-to-mid-size CPA firms — no noise, only signal</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h4>Integration & Training</h4>
-                    <p>Connect to Clio/MyCase/PracticePanther, test with real cases, train your team</p>
+                    <h4>Daily Briefing</h4>
+                    <p>Delivered to your inbox by 6 AM: 5-minute read with summaries, action items, and links to full sources</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h4>You Own It</h4>
-                    <p>Full handoff with documentation. Optional monthly support available.</p>
+                    <h4>You Stay Ahead</h4>
+                    <p>Walk into the office informed. Advise clients proactively. Position your firm as the trusted expert.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="social-proof">
+        <div class="container">
+            <h3>What You'll Get Every Morning</h3>
+            
+            <div class="use-case">
+                <h4>📋 Regulatory Updates</h4>
+                <ul>
+                    <li>IRS guidance on beneficial ownership reporting deadlines</li>
+                    <li>New FASB standards affecting revenue recognition for SaaS companies</li>
+                    <li>State tax nexus changes in markets where your clients operate</li>
+                    <li>Compliance deadlines in the next 7-30 days</li>
+                </ul>
+            </div>
+            
+            <div class="use-case">
+                <h4>💼 Market Intelligence</h4>
+                <ul>
+                    <li>Private equity activity in your clients' industries (M&A opportunities)</li>
+                    <li>Technology trends affecting accounting workflows (AI, automation)</li>
+                    <li>Pricing benchmarks for CAS, advisory, and specialized services</li>
+                    <li>Competitor moves (new services, firm acquisitions)</li>
+                </ul>
+            </div>
+            
+            <div class="use-case">
+                <h4>🎯 Client Triggers</h4>
+                <ul>
+                    <li>Restaurant tax credit changes (alert hospitality clients)</li>
+                    <li>R&D tax credit expansions (alert tech/manufacturing clients)</li>
+                    <li>Economic injury disaster loan deadlines (proactive outreach)</li>
+                    <li>New opportunities for tax planning, entity restructuring, and advisory</li>
+                </ul>
             </div>
         </div>
     </section>
     
     <section class="transparency">
         <div class="container">
-            <h3>We Document Everything</h3>
-            <p>Most consulting firms sell vague promises. We publish our complete product specifications, implementation methodology, and client handoff templates. See exactly what you'll receive before signing a contract.</p>
-            <a href="/product-docs.html">View Product Documentation →</a>
-        </div>
-    </section>
-    
-    <section class="social-proof">
-        <div class="container">
-            <h3>Real Results</h3>
-            <div class="case-study">
-                <h4>Solo Family Law Attorney, Chapel Hill NC</h4>
-                <p><strong>Before Automation:</strong></p>
-                <ul>
-                    <li>• 8 new clients per month</li>
-                    <li>• 2 hours per intake manually</li>
-                    <li>• 16 hours/month spent on admin work</li>
-                    <li>• Engagement letters took 3-5 days to finalize</li>
-                </ul>
-                <p style="margin-top: 1.5rem;"><strong>After Automation:</strong></p>
-                <ul>
-                    <li>• 15 minutes per intake (attorney review only)</li>
-                    <li>• 2 hours/month spent on intake</li>
-                    <li>• 14 hours/month reclaimed for billable work</li>
-                    <li>• Engagement letters finalized same-day</li>
-                </ul>
-                <div class="roi">
-                    $3,850/month in recovered billable time (at $275/hr)<br>
-                    Investment paid for itself in 23 days
-                </div>
+            <h3>We're in Beta</h3>
+            <p>Morning Briefing launches June 10, 2026. We're offering founding partner access to the first 20 CPA firms who join the waitlist. You'll get:</p>
+            <div class="beta-notice">
+                <p><strong>Founding Partner Benefits:</strong></p>
+                <p style="margin-top: 1rem; text-align: left;">
+                    ✓ Lifetime discounted pricing (locked in forever)<br>
+                    ✓ Direct input on features and coverage priorities<br>
+                    ✓ Early access to new intelligence modules<br>
+                    ✓ White-glove onboarding and customization
+                </p>
             </div>
         </div>
     </section>
     
     <section class="contact-section" id="contact">
         <div class="container">
-            <h3>Ready to Reclaim Your Time?</h3>
-            <p>Book a free 30-minute assessment. No sales pitch. We'll show you exactly what's possible for your firm.</p>
+            <h3>Join the Founding Partner Waitlist</h3>
+            <p>Limited to 20 CPA firms. No payment required to reserve your spot.</p>
             
             <form class="contact-form" action="https://formspree.io/f/xvgoqbrj" method="POST">
                 <div class="form-group">
@@ -479,6 +489,11 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="title">Your Title</label>
+                    <input type="text" id="title" name="title" placeholder="e.g., Managing Partner, CPA">
+                </div>
+                
+                <div class="form-group">
                     <label for="email">Email *</label>
                     <input type="email" id="email" name="_replyto" required>
                 </div>
@@ -489,19 +504,19 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="practice_areas">Practice Areas</label>
-                    <input type="text" id="practice_areas" name="practice_areas" placeholder="e.g., Family Law, Personal Injury">
+                    <label for="firm_size">Firm Size</label>
+                    <input type="text" id="firm_size" name="firm_size" placeholder="e.g., 3 partners, 8 staff">
                 </div>
                 
                 <div class="form-group">
-                    <label for="message">What's your biggest time drain?</label>
-                    <textarea id="message" name="message" placeholder="Tell us what takes up most of your time..."></textarea>
+                    <label for="message">What intelligence would be most valuable to you?</label>
+                    <textarea id="message" name="message" placeholder="e.g., regulatory changes, client advisory opportunities, technology trends..."></textarea>
                 </div>
                 
-                <input type="hidden" name="_subject" value="New Assessment Request - Covenant Systems">
+                <input type="hidden" name="_subject" value="Morning Briefing Waitlist - Covenant Systems">
                 <input type="text" name="_gotcha" style="display:none">
                 
-                <button type="submit" class="submit-button">Request Free Assessment</button>
+                <button type="submit" class="submit-button">Reserve My Founding Partner Spot</button>
             </form>
         </div>
     </section>
@@ -511,8 +526,6 @@
             <p><strong>Covenant Systems AI LLC</strong></p>
             <p>North Carolina | <a href="mailto:hello@covenantsystems.ai">hello@covenantsystems.ai</a></p>
             <p style="margin-top: 1rem; font-size: 0.85rem;">
-                <a href="/blog.html">Blog</a> | 
-                <a href="/product-docs.html">Product Docs</a> | 
                 <a href="/story.html">Our Story</a> | 
                 <a href="/privacy.html">Privacy Policy</a> | 
                 <a href="/terms.html">Terms of Service</a>
