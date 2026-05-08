@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Morning Briefing - May 8, 2026 | Covenant Systems</title>
+    <meta name="description" content="See exactly what CPA Morning Briefing delivers: regulatory updates, market intelligence, and client triggers in a 5-minute read.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8fafc;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        header { 
+            background: #0a0f1e;
+            color: white;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #4f46e5;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { 
+            font-size: 1.5rem; 
+            font-weight: 700;
+        }
+        header a {
+            color: #818cf8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        header a:hover { color: #a5b4fc; }
+        
+        .briefing-header {
+            background: linear-gradient(135deg, #0a0f1e 0%, #1e293b 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .briefing-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .briefing-header .date {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+        .briefing-header .read-time {
+            background: rgba(79, 70, 229, 0.3);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #a5b4fc;
+        }
+        
+        .sample-notice {
+            background: #fef3c7;
+            border: 2px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .sample-notice strong {
+            color: #92400e;
+            font-size: 1.1rem;
+        }
+        .sample-notice p {
+            color: #78350f;
+            margin-top: 0.5rem;
+        }
+        
+        .briefing-content {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #4f46e5;
+        }
+        .section-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        .section h3 {
+            font-size: 1.8rem;
+            color: #0a0f1e;
+        }
+        
+        .update-item {
+            background: #f8fafc;
+            border-left: 4px solid #4f46e5;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        .update-item h4 {
+            font-size: 1.3rem;
+            color: #0a0f1e;
+            margin-bottom: 0.75rem;
+        }
+        .update-item .source {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .update-item p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .update-item .action {
+            background: #ecfdf5;
+            border-left: 3px solid #10b981;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+        }
+        .update-item .action strong {
+            color: #047857;
+        }
+        .update-item a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .update-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .trigger-card {
+            background: #fffbeb;
+            border: 2px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .trigger-card h4 {
+            font-size: 1.2rem;
+            color: #92400e;
+            margin-bottom: 0.75rem;
+        }
+        .trigger-card p {
+            color: #78350f;
+            margin-bottom: 0.5rem;
+        }
+        .trigger-card .opportunity {
+            font-weight: 600;
+            color: #047857;
+            margin-top: 0.75rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #e0e7ff;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #4f46e5;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            background: #0a0f1e;
+            margin-top: 3rem;
+        }
+        footer a {
+            color: #818cf8;
+            text-decoration: none;
+        }
+        footer a:hover { color: #a5b4fc; }
+        
+        @media (max-width: 768px) {
+            .briefing-header h2 { font-size: 1.8rem; }
+            .briefing-content { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Covenant Systems</h1>
+            <a href="/">← Back to Home</a>
+        </div>
+    </header>
+    
+    <section class="briefing-header">
+        <div class="container">
+            <h2>CPA Morning Briefing</h2>
+            <p class="date">Thursday, May 8, 2026</p>
+            <div class="read-time">⏱ 5-minute read</div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="sample-notice">
+            <strong>📋 This is a Sample Briefing</strong>
+            <p>See exactly what you'll receive every morning starting June 10, 2026. Real regulatory updates, curated for small-to-mid-size CPA firms.</p>
+        </div>
+        
+        <div class="briefing-content">
+            
+            <!-- SECTION 1: REGULATORY UPDATES -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">⚖️</div>
+                    <h3>Regulatory Updates</h3>
+                </div>
+                
+                <div class="update-item">
+                    <h4>PCAOB Finalizes New Quality Control Standards for 2026</h4>
+                    <div class="source">Source: PCAOB • Effective December 15, 2026</div>
+                    <p>The Public Company Accounting Oversight Board has finalized QC 1000 and AS 2901, requiring firms performing audits of public companies to implement comprehensive risk-based quality control systems by end of year.</p>
+                    <p><strong>Key Changes:</strong></p>
+                    <ul style="margin-left: 1.5rem; color: #475569;">
+                        <li>Quality control systems must now be risk-based rather than compliance-focused</li>
+                        <li>Firms must establish "engagement deficiency response frameworks" (AS 2901)</li>
+                        <li>Enhanced documentation requirements for quality review processes</li>
+                    </ul>
+                    <div class="action">
+                        <strong>Action for your firm:</strong> If you perform public company audits, budget 40-60 hours for QC system redesign before December deadline. Non-public firms: monitor for spillover to AICPA peer review standards.
+                    </div>
+                    <p style="margin-top: 1rem;"><a href="https://pcaobus.org/oversight/standards/qc-standards" target="_blank">Read full standard →</a></p>
+                </div>
+                
+                <div class="update-item">
+                    <h4>FASB Issues Guidance on Government Grant Accounting</h4>
+                    <div class="source">Source: FASB ASU 2025-XX • Effective for fiscal years beginning after December 15, 2026</div>
+                    <p>The Financial Accounting Standards Board published an Accounting Standards Update establishing authoritative guidance on accounting for government grants received by business entities.</p>
+                    <p><strong>What Changed:</strong> Previously, no specific GAAP guidance existed for for-profit entities receiving government grants (PPP loans, EIDL advances, state incentives, R&D credits). New ASU provides:</p>
+                    <ul style="margin-left: 1.5rem; color: #475569;">
+                        <li>Recognition criteria: When grant conditions are met vs. when cash received</li>
+                        <li>Presentation options: Contra-expense, other income, or offset to related asset</li>
+                        <li>Disclosure requirements: Nature, terms, and accounting policy election</li>
+                    </ul>
+                    <div class="action">
+                        <strong>Client impact:</strong> Clients who received PPP forgiveness, state tax credits, or R&D incentives may need restatement if prior accounting was inconsistent. Review 2025 financials for compliance.
+                    </div>
+                </div>
+                
+                <div class="update-item">
+                    <h4>IRS Extends Beneficial Ownership Reporting Deadline</h4>
+                    <div class="source">Source: FinCEN • New deadline: September 30, 2026 (previously June 1)</div>
+                    <p>The Financial Crimes Enforcement Network (FinCEN) extended the initial beneficial ownership information (BOI) reporting deadline by four months, citing "implementation challenges faced by small businesses and professional advisors."</p>
+                    <p><strong>Who Must File:</strong> Any corporation, LLC, or similar entity created or registered to do business in the US (exemptions: publicly traded companies, large operating companies with 20+ employees and $5M+ revenue).</p>
+                    <div class="action">
+                        <strong>Advisory opportunity:</strong> Most small business clients still don't know this exists. Proactive outreach: "Have you filed your BOI report with FinCEN? I can help prepare it for you." Billable time: 30-60 min per entity.
+                    </div>
+                    <p style="margin-top: 1rem;"><a href="https://www.fincen.gov/boi" target="_blank">FinCEN BOI Resource Center →</a></p>
+                </div>
+            </div>
+            
+            <!-- SECTION 2: MARKET INTELLIGENCE -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">📊</div>
+                    <h3>Market Intelligence</h3>
+                </div>
+                
+                <div class="update-item">
+                    <h4>Talent Crisis Deepens: Accounting Firms Shift Hiring Strategy for 2026</h4>
+                    <div class="source">Source: CPA Practice Advisor, Morningstar • Industry Survey Data</div>
+                    <p>High demand for specialized accounting talent in 2026 is driven by three factors:</p>
+                    <ul style="margin-left: 1.5rem; color: #475569;">
+                        <li>Increased industry retirements (Baby Boomers aging out)</li>
+                        <li>Fewer new professionals entering the field (150-hour requirement impact)</li>
+                        <li>AI advances creating demand for tech-savvy CPAs who can leverage automation</li>
+                    </ul>
+                    <p><strong>Top 5 Skills Firms Are Hiring For:</strong></p>
+                    <ol style="margin-left: 1.5rem; color: #475569;">
+                        <li>AI/automation tool fluency (not replacement, but augmentation)</li>
+                        <li>Advisory & strategic consulting (beyond compliance)</li>
+                        <li>Data analytics & visualization</li>
+                        <li>Cloud accounting platform expertise (QuickBooks Online, Xero, NetSuite)</li>
+                        <li>Client communication & relationship management</li>
+                    </ol>
+                    <div class="action">
+                        <strong>Strategic takeaway:</strong> If you're struggling to hire, consider "hire for attitude, train for skill" approach. Invest in AI tool training for existing staff instead of competing for scarce experienced hires.
+                    </div>
+                </div>
+                
+                <div class="update-item">
+                    <h4>Tech Budgets Flat in 2026: AI Spending Remains Priority</h4>
+                    <div class="source">Source: Accounting Today • 2026 Technology Survey</div>
+                    <p>Firm technology budgets are expected to remain at 21% of overall budgets — roughly the same as the previous three years. However, <strong>AI and automation tools now represent 35% of tech spending</strong> (up from 12% in 2023).</p>
+                    <p><strong>Where Firms Are Investing:</strong></p>
+                    <ul style="margin-left: 1.5rem; color: #475569;">
+                        <li>Document automation & AI drafting tools (engagement letters, tax memos)</li>
+                        <li>Client portal upgrades (secure messaging, e-signature, document exchange)</li>
+                        <li>Practice management platforms with built-in workflow automation</li>
+                        <li>AI-powered tax research and compliance tools</li>
+                    </ul>
+                    <p><strong>What's Being Cut:</strong> Traditional on-premise servers, manual timekeeping systems, separate billing/CRM tools (consolidating into all-in-one platforms).</p>
+                </div>
+            </div>
+            
+            <!-- SECTION 3: CLIENT TRIGGERS -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🎯</div>
+                    <h3>Client Advisory Opportunities</h3>
+                </div>
+                
+                <div class="trigger-card">
+                    <h4>🏢 Corporate Transparency Act Compliance (BOI Reporting)</h4>
+                    <p><strong>Trigger:</strong> FinCEN deadline extended to September 30, 2026</p>
+                    <p><strong>Who to contact:</strong> Any client who formed or registered an LLC or corporation in the last 5 years (exempt: public companies, large operating companies)</p>
+                    <p class="opportunity">💡 Advisory opportunity: Offer BOI report preparation as a standalone service ($150-300 per entity). Email template: "Have you filed your Beneficial Ownership report yet? New September deadline. I can prepare it for you."</p>
+                </div>
+                
+                <div class="trigger-card">
+                    <h4>🏭 R&D Tax Credit Review for Tech/Manufacturing Clients</h4>
+                    <p><strong>Trigger:</strong> FASB government grant accounting update highlights need to review R&D credit treatment</p>
+                    <p><strong>Who to contact:</strong> Clients in software development, manufacturing, engineering, or product design</p>
+                    <p class="opportunity">💡 Advisory opportunity: "The new FASB guidance on government grants reminded me — have we reviewed your R&D tax credit eligibility lately? Many software companies qualify and don't realize it."</p>
+                </div>
+                
+                <div class="trigger-card">
+                    <h4>🤖 AI Adoption & Process Automation Consulting</h4>
+                    <p><strong>Trigger:</strong> Industry reports show 35% of accounting firms now investing heavily in AI/automation</p>
+                    <p><strong>Who to contact:</strong> Business owner clients struggling with staffing shortages or operational inefficiency</p>
+                    <p class="opportunity">💡 Advisory opportunity: Position yourself as the "AI-savvy advisor." Offer: "I'm helping clients evaluate AI tools for invoicing, payroll, and admin work. Want a 30-min consultation on what might work for your business?"</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="cta-section">
+            <h3>Get This Every Morning Starting June 10</h3>
+            <p>Join 20 founding partner CPA firms receiving the Morning Briefing before your first cup of coffee.</p>
+            <a href="/#contact" class="cta-button">Reserve Your Spot →</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p><strong>Covenant Systems AI LLC</strong> | North Carolina</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="/">Home</a> | 
+                <a href="/story.html">Our Story</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
