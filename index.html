@@ -39,6 +39,7 @@
             text-decoration: none;
             margin-left: 2rem;
             font-weight: 500;
+            font-size: 0.95rem;
         }
         nav a:hover { color: #a5b4fc; }
         
@@ -93,11 +94,15 @@
         .hero .cta-secondary:hover {
             background: rgba(79, 70, 229, 0.1);
         }
-        .hero .sample-link {
+        .hero .sample-links {
             display: block;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+        .hero .sample-link {
+            display: inline-block;
+            margin-right: 1.5rem;
             color: #a5b4fc;
-            font-size: 1rem;
             text-decoration: none;
             font-weight: 500;
         }
@@ -366,9 +371,9 @@
         <div class="container">
             <h1>Covenant Systems</h1>
             <nav>
+                <a href="/generated-briefing.html">See Live Demo</a>
                 <a href="/sample-briefing.html">See Sample</a>
                 <a href="/story.html">Our Story</a>
-                <a href="mailto:hello@covenantsystems.ai">Contact</a>
             </nav>
         </div>
     </header>
@@ -377,9 +382,12 @@
         <div class="container">
             <h2>Your Daily Intelligence Briefing, Before Your First Cup of Coffee</h2>
             <p>Regulatory updates, industry trends, and client opportunities delivered to your inbox every morning. Built specifically for CPA firm owners who need to stay ahead without drowning in information overload.</p>
-            <a href="/sample-briefing.html" class="cta-primary">See Sample Briefing</a>
+            <a href="/generated-briefing.html" class="cta-primary">See Live Demo</a>
             <a href="#contact" class="cta-secondary">Join Waitlist</a>
-            <a href="/sample-briefing.html" class="sample-link">📋 View May 8 Sample (real regulatory updates, 5-min read) →</a>
+            <div class="sample-links">
+                <a href="/generated-briefing.html" class="sample-link">🟢 View Today's AI-Generated Briefing →</a>
+                <a href="/sample-briefing.html" class="sample-link">📋 View May 8 Curated Sample →</a>
+            </div>
         </div>
     </section>
     
@@ -540,6 +548,7 @@
             <p><strong>Covenant Systems AI LLC</strong></p>
             <p>North Carolina | <a href="mailto:hello@covenantsystems.ai">hello@covenantsystems.ai</a></p>
             <p style="margin-top: 1rem; font-size: 0.85rem;">
+                <a href="/generated-briefing.html">Live Demo</a> | 
                 <a href="/sample-briefing.html">Sample Briefing</a> | 
                 <a href="/story.html">Our Story</a> | 
                 <a href="/privacy.html">Privacy Policy</a> | 
