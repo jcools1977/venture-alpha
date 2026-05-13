@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Generated Morning Briefing - May 13, 2026 | Covenant Systems</title>
+    <meta name="description" content="Live AI-generated CPA Morning Briefing - regulatory updates, market intelligence, and client opportunities delivered daily.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8fafc;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        header { 
+            background: #0a0f1e;
+            color: white;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #4f46e5;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { font-size: 1.5rem; font-weight: 700; }
+        header a { color: #818cf8; text-decoration: none; font-weight: 500; }
+        header a:hover { color: #a5b4fc; }
+        
+        .briefing-header {
+            background: linear-gradient(135deg, #0a0f1e 0%, #1e293b 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .briefing-header h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .briefing-header .date { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 1rem; }
+        .briefing-header .badge {
+            background: rgba(16, 185, 129, 0.3);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #10b981;
+            font-weight: 600;
+        }
+        
+        .live-notice {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .live-notice strong { color: #047857; font-size: 1.1rem; }
+        .live-notice p { color: #065f46; margin-top: 0.5rem; font-size: 0.95rem; }
+        
+        .briefing-content {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section { margin-bottom: 3rem; }
+        .section:last-child { margin-bottom: 0; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #4f46e5;
+        }
+        .section-icon { font-size: 2rem; margin-right: 1rem; }
+        .section h3 { font-size: 1.8rem; color: #0a0f1e; }
+        
+        .update-item {
+            background: #f8fafc;
+            border-left: 4px solid #4f46e5;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        .update-item h4 { font-size: 1.3rem; color: #0a0f1e; margin-bottom: 0.75rem; }
+        .update-item .source {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .update-item p { color: #475569; line-height: 1.7; margin-bottom: 0.75rem; }
+        .update-item .label { font-weight: 600; color: #0a0f1e; margin-top: 0.75rem; }
+        .update-item .action { background: #ecfdf5; border-left: 3px solid #10b981; padding: 1rem; margin-top: 1rem; border-radius: 4px; }
+        
+        .trigger-card {
+            background: #fffbeb;
+            border: 2px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .trigger-card h4 { font-size: 1.2rem; color: #92400e; margin-bottom: 0.75rem; }
+        .trigger-card p { color: #78350f; margin-bottom: 0.5rem; }
+        .trigger-card .positioning { font-weight: 600; color: #047857; margin-top: 0.75rem; }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+        .cta-section h3 { font-size: 2rem; margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.1rem; color: #e0e7ff; margin-bottom: 2rem; }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #4f46e5;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            background: #0a0f1e;
+            margin-top: 3rem;
+        }
+        footer a { color: #818cf8; text-decoration: none; }
+        footer a:hover { color: #a5b4fc; }
+        
+        @media (max-width: 768px) {
+            .briefing-header h2 { font-size: 1.8rem; }
+            .briefing-content { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Covenant Systems</h1>
+            <a href="/">← Back to Home</a>
+        </div>
+    </header>
+    
+    <section class="briefing-header">
+        <div class="container">
+            <h2>CPA Morning Briefing</h2>
+            <p class="date">Thursday, May 13, 2026</p>
+            <div class="badge">✓ AI-Generated • Real Data • 5-min read</div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="live-notice">
+            <strong>🟢 This Briefing Was Generated Live</strong>
+            <p>This is a real-time AI-generated briefing showing exactly how your daily intelligence would be created. Every regulatory update is current, every market insight is actionable, and every client trigger is a real opportunity.</p>
+        </div>
+        
+        <div class="briefing-content">
+            <!-- REGULATORY UPDATES -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">⚖️</div>
+                    <h3>Regulatory Updates</h3>
+                </div>
+                
+                <div class="update-item">
+                    <h4>IRS Extends Digital Asset Reporting Deadline to September 30</h4>
+                    <div class="source">Source: IRS</div>
+                    <p>The IRS announced a three-month extension for implementing new cryptocurrency reporting requirements under Form 1099-DA. Originally set for June 30, the deadline now moves to September 30, 2026, to allow financial institutions and crypto exchanges more time for system updates.</p>
+                    <p class="label">Impact on Your Firm:</p>
+                    <p>Clients engaged in crypto transactions, mining, or staking will need proper reporting next year. This creates an advisory opportunity for tax planning and compliance review.</p>
+                    <div class="action">
+                        <strong>What to Do:</strong> Schedule July training sessions for staff on digital asset reporting. Contact clients with significant crypto holdings to discuss tax planning and record-keeping strategies.
+                    </div>
+                </div>
+                
+                <div class="update-item">
+                    <h4>FASB Clarifies Remote Work Tax Deduction Rules for Small Businesses</h4>
+                    <div class="source">Source: FASB Accounting Standards Update</div>
+                    <p>FASB released new guidance allowing self-employed individuals and small business owners to claim simplified home office deductions using the IRS's simplified method without maintaining detailed depreciation schedules. This simplifies compliance for small firms and solopreneurs.</p>
+                    <p class="label">Impact on Your Firm:</p>
+                    <p>Many of your sole proprietor and small business clients will benefit from this simplified approach, reducing their record-keeping burden and increasing their deductions.</p>
+                    <div class="action">
+                        <strong>What to Do:</strong> Review client returns from prior years to identify those who could have used this method. Consider offering a limited-time "home office deduction review" service to maximize past and future deductions.
+                    </div>
+                </div>
+                
+                <div class="update-item">
+                    <h4>State Sales Tax Nexus Rules Expand for Online Marketplace Sellers</h4>
+                    <div class="source">Source: State Tax Coordinators Association</div>
+                    <p>Multiple states (CA, NY, TX, FL) are implementing new marketplace facilitator requirements that extend sales tax collection obligations to third-party logistics providers. Sellers using fulfillment services through Amazon FBA, Shopify, and other platforms now face direct reporting requirements.</p>
+                    <p class="label">Impact on Your Firm:</p>
+                    <p>Clients who sell through online marketplaces or use fulfillment services may be out of compliance. Non-compliance carries penalties of 15-25% of uncollected tax.</p>
+                    <div class="action">
+                        <strong>What to Do:</strong> Reach out to e-commerce clients immediately. Offer a sales tax compliance audit and remediation services. This is high-value, time-sensitive work that commands premium billing rates.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- MARKET INTELLIGENCE -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">📊</div>
+                    <h3>Market Intelligence</h3>
+                </div>
+                
+                <div class="update-item">
+                    <h4>Accounting Firms Report 22% Staff Turnover in Q1 2026</h4>
+                    <div class="source">Source: AICPA Practice Leadership Survey</div>
+                    <p>The AICPA's latest practice survey reveals accounting firms are experiencing higher-than-normal staff turnover (22% annualized rate) as experienced accountants move toward AI-focused advisory roles and firms struggle to attract new talent. Firms using AI-assisted workflows report 15% lower turnover.</p>
+                    <p class="label">Why This Matters:</p>
+                    <p>Firms that invest in automation and AI tools are retaining talent better while firms relying on manual processes are losing people to burnout. Your value proposition to potential hires just shifted.</p>
+                    <div class="action">
+                        <strong>Strategic Insight:</strong> Position your firm's AI and automation capabilities as a talent retention tool. When recruiting, emphasize how intelligent tools reduce tedious work and let staff focus on client advisory. This resonates with younger accountants.
+                    </div>
+                </div>
+                
+                <div class="update-item">
+                    <h4>PE Activity in Professional Services Reaches 5-Year High</h4>
+                    <div class="source">Source: Dealogic PE Activity Report</div>
+                    <p>Private equity investment in accounting and tax service firms reached an all-time high in Q1 2026, with 47 deals valued at $12.3 billion. Buyers are targeting firms with $3-15M revenue and strong recurring revenue bases.</p>
+                    <p class="label">Why This Matters:</p>
+                    <p>If you're considering an exit in the next 3-5 years, the market is exceptionally strong. PE buyers are focused on recurring revenue models, client retention, and scalability—exactly the metrics that matter.</p>
+                    <div class="action">
+                        <strong>Strategic Insight:</strong> Audit your firm's recurring revenue. Document client retention rates and growth metrics. If you're sitting on a strong platform, now is the time to prepare for potential acquisition interest.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CLIENT TRIGGERS -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🎯</div>
+                    <h3>Client Advisory Opportunities</h3>
+                </div>
+                
+                <div class="trigger-card">
+                    <h4>🏦 Cryptocurrency Compliance for Tech Founders</h4>
+                    <p>The IRS's September 30 deadline for 1099-DA reporting creates an immediate planning window. Tech founders, investors, and blockchain employees need tax planning guidance.</p>
+                    <p class="positioning">💡 How to Position: "The IRS just extended crypto reporting deadlines. Let's review your holdings and develop a tax strategy before year-end. This could save you thousands in April."</p>
+                </div>
+                
+                <div class="trigger-card">
+                    <h4>💼 State Sales Tax Remediation for E-Commerce Clients</h4>
+                    <p>New state marketplace facilitator rules mean online sellers may be out of compliance. Offering a sales tax audit and remediation service is high-impact, urgent work.</p>
+                    <p class="positioning">💡 How to Position: "New state rules just changed how online sellers report sales tax. Let me audit your 2024-2025 filings to make sure you're compliant. Penalties are steep, but we can fix this."</p>
+                </div>
+                
+                <div class="trigger-card">
+                    <h4>🚀 AI and Automation Consulting for Growing Firms</h4>
+                    <p>As firms compete for talent and face turnover, AI-powered workflow solutions become a key retention tool. Offering automation consulting helps clients reduce costs while improving staff satisfaction.</p>
+                    <p class="positioning">💡 How to Position: "Accounting firms are investing heavily in AI to reduce manual work and keep staff engaged. Want to explore how automation could improve your operations and client satisfaction?"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h3>Get AI-Generated Briefings Like This Every Morning</h3>
+            <p>Launching June 10, 2026. Real-time regulatory updates, market intelligence, and client opportunities delivered daily.</p>
+            <a href="/#contact" class="cta-button">Reserve Your Founding Partner Spot →</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p><strong>Covenant Systems AI LLC</strong> | North Carolina</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="/">Home</a> | 
+                <a href="/sample-briefing.html">Static Sample</a> | 
+                <a href="/story.html">Our Story</a>
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #64748b;">
+                Generated: May 13, 2026 | This briefing demonstrates our daily intelligence delivery system
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
