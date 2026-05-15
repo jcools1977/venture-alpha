@@ -63,6 +63,12 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .hero .launch-date {
+            font-size: 1.1rem;
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
         .hero .cta-primary {
             display: inline-block;
             background: #4f46e5;
@@ -261,6 +267,91 @@
             color: #a5b4fc;
             font-size: 1.2rem;
         }
+        .transparency .beta-notice p {
+            text-align: left;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        
+        .founding-partner {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        .founding-partner h3 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0a0f1e;
+        }
+        .partner-box {
+            background: white;
+            border: 2px solid #4f46e5;
+            border-radius: 8px;
+            padding: 3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .partner-box h4 {
+            font-size: 1.8rem;
+            color: #4f46e5;
+            margin-bottom: 1.5rem;
+        }
+        .partner-box .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 1.5rem;
+        }
+        .partner-box ul {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .partner-box li {
+            padding: 0.75rem 0;
+            color: #475569;
+            font-size: 1.1rem;
+        }
+        .partner-box li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 0.75rem;
+        }
+        .partner-box .limit {
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #e11d48;
+            font-weight: 600;
+        }
+        .partner-box .resources {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .partner-box .resources p {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+        .partner-box .resource-link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #f1f5f9;
+            color: #4f46e5;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .partner-box .resource-link:hover {
+            background: #e2e8f0;
+            text-decoration: underline;
+        }
         
         .contact-section {
             padding: 5rem 0;
@@ -363,6 +454,9 @@
             .contact-form {
                 padding: 1.5rem;
             }
+            .partner-box {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
@@ -382,8 +476,9 @@
         <div class="container">
             <h2>Your Daily Intelligence Briefing, Before Your First Cup of Coffee</h2>
             <p>Regulatory updates, industry trends, and client opportunities delivered to your inbox every morning. Built specifically for CPA firm owners who need to stay ahead without drowning in information overload.</p>
-            <a href="/generated-briefing.html" class="cta-primary">See Live Demo</a>
-            <a href="#contact" class="cta-secondary">Join Waitlist</a>
+            <p class="launch-date">🚀 Launching June 10, 2026</p>
+            <a href="#founding-partner" class="cta-primary">Become a Founding Partner</a>
+            <a href="/generated-briefing.html" class="cta-secondary">See Live Demo</a>
             <div class="sample-links">
                 <a href="/generated-briefing.html" class="sample-link">🟢 View Today's AI-Generated Briefing →</a>
                 <a href="/sample-briefing.html" class="sample-link">📋 View May 8 Curated Sample →</a>
@@ -398,7 +493,7 @@
                 <div class="benefit-card">
                     <h4>Regulatory Intelligence</h4>
                     <p>IRS updates, FASB changes, state tax modifications, and compliance deadlines summarized in plain language. Know what affects your clients before they ask.</p>
-                    <div class="stat">15 min/day → 3 min</div>
+                    <div class="stat">15 min/day → 5 min</div>
                 </div>
                 <div class="benefit-card">
                     <h4>Industry Trends</h4>
@@ -478,17 +573,45 @@
         </div>
     </section>
     
+    <section class="founding-partner" id="founding-partner">
+        <div class="container">
+            <h3>Become a Founding Partner</h3>
+            <div class="partner-box">
+                <h4>Limited to 20 CPA Firms</h4>
+                <div class="price">$1,500/month</div>
+                <p>Locked in forever. Never increases.</p>
+                
+                <ul>
+                    <li>Daily briefing delivered by 6 AM, Monday-Friday</li>
+                    <li>Full customization based on your firm's focus</li>
+                    <li>Direct email support</li>
+                    <li>Monthly check-in calls with our founder</li>
+                    <li>Early access to new features</li>
+                    <li>Lifetime founding partner pricing</li>
+                </ul>
+                
+                <div class="limit">⏰ Limited spots remaining. We launch June 10.</div>
+                
+                <div class="resources">
+                    <p>Before you commit, learn what we deliver:</p>
+                    <a href="https://docs.google.com/document/d/1VYvHwNnScqyYY3pX0Stt4WLBilX1wSKngAMrHm0M45o" class="resource-link" target="_blank">📖 How We Create Your Briefing</a>
+                    <a href="https://docs.google.com/document/d/1lykwD30GZfkocUoRrQI7O1bCBIdhVUu0V22-EeTnz9U" class="resource-link" target="_blank">💬 Discovery Call Guide</a>
+                </div>
+                
+                <a href="#contact" style="display: inline-block; margin-top: 2rem; background: #4f46e5; color: white; padding: 1rem 2.5rem; text-decoration: none; border-radius: 6px; font-weight: 700; font-size: 1.1rem; transition: all 0.2s;" onmouseover="this.style.background='#4338ca'" onmouseout="this.style.background='#4f46e5'">Reserve Your Spot →</a>
+            </div>
+        </div>
+    </section>
+    
     <section class="transparency">
         <div class="container">
-            <h3>We're in Beta</h3>
-            <p>Morning Briefing launches June 10, 2026. We're offering founding partner access to the first 20 CPA firms who join the waitlist. You'll get:</p>
+            <h3>We're Transparent About What We Build</h3>
+            <p>Morning Briefing launches June 10, 2026. Here's exactly what happens:</p>
             <div class="beta-notice">
-                <p><strong>Founding Partner Benefits:</strong></p>
-                <p style="margin-top: 1rem; text-align: left;">
-                    ✓ Lifetime discounted pricing (locked in forever)<br>
-                    ✓ Direct input on features and coverage priorities<br>
-                    ✓ Early access to new intelligence modules<br>
-                    ✓ White-glove onboarding and customization
+                <strong>How It Works:</strong>
+                <p>Every evening, our founder reviews 200+ regulatory and industry sources. We identify what matters to CPA firms specifically. You get a 5-minute daily briefing with: regulatory updates that affect your clients, market intelligence for your firm, and specific client opportunities based on what just happened.</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Why This Matters:</strong> We combine AI monitoring with human judgment. Automation finds the signal. A human decides what's relevant. You get quality, not noise.
                 </p>
             </div>
         </div>
@@ -497,7 +620,7 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <h3>Join the Founding Partner Waitlist</h3>
-            <p>Limited to 20 CPA firms. No payment required to reserve your spot.</p>
+            <p>Limited to 20 CPA firms. We'll be in touch within 24 hours to schedule a discovery call.</p>
             
             <form class="contact-form" action="https://formspree.io/f/xvgoqbrj" method="POST">
                 <div class="form-group">
