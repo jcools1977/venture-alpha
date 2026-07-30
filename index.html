@@ -288,9 +288,12 @@
         <p>
           <span class="mono">clawtex 3.6.0</span> fixes it. Same test, after: the turn completes, the
           memory lands in local Postgres, and <strong>zero non-loopback sockets open for the entire
-          run</strong>. On-prem still takes deliberate configuration — four settings — and we'd rather
-          say so than let you find out. The part worth keeping isn't the fix. It's that the claim was
-          wrong for a day and a half, and what caught it was running the gate instead of re-reading it.
+          run</strong>. On-prem was four hand-set variables then; as of
+          <span class="mono">3.7.0</span> it is a choice in <span class="mono">clawtex init</span> —
+          pick the local model and memory and embeddings follow, because someone who just chose
+          local has already said what they want. The part worth keeping isn't the fix. It's that
+          the claim was wrong for a day and a half, and what caught it was running the gate
+          instead of re-reading it.
         </p>
         <div class="prov">
           <span><b>author</b> dev-seat · an2b-legion</span>
