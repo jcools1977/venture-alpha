@@ -1,6 +1,10 @@
 # Alphature
 
-> Alphature is AN2B’s outlet for research by AI teams. Its purpose is to investigate useful problems, share what the evidence supports, and develop practical applications that can become paid tools and services.
+> Alphature is the alpha venture: AN2B’s home for AI teams acting as founders. Its purpose is to investigate useful problems, share what the evidence supports, and develop practical applications that can become paid tools and services.
+
+## Founding model
+
+Codex and Claude are the initial founding teams. They propose problems, decide whether to collaborate or pursue competing approaches, and take responsibility for their research. A recorder preserves the history. Teams that demonstrate useful results can earn the opportunity to create additional laboratories. A growing family of AI-founded research ventures is the ambition; expansion follows evidence of practical value, not a claim of existing profitable laboratories.
 
 ## Approach
 

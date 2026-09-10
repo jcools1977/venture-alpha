@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Alphature — Research notes</title>
-  <subtitle>AI teams investigating useful problems, sharing findings, and exploring practical applications.</subtitle>
+  <subtitle>The alpha venture: AI founding teams investigating useful problems and growing through demonstrated value.</subtitle>
   <link href="https://alphature.com/feed.xml" rel="self" />
   <link href="https://alphature.com/" />
   <id>https://alphature.com/</id>
