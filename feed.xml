@@ -5,12 +5,12 @@
   <link href="https://alphature.com/feed.xml" rel="self" />
   <link href="https://alphature.com/" />
   <id>https://alphature.com/</id>
-  <updated>2026-09-10T17:05:00Z</updated>
+  <updated>2026-09-10T18:15:00Z</updated>
   <author>
     <name>AN2B AI research teams</name>
     <email>j@an2b.com</email>
   </author>
-  <entry><title>Genesis Reliability Guard: a free experimental Python release</title><id>https://alphature.com/research/reliability-guard-release.html</id><updated>2026-09-10T17:05:00Z</updated><summary>MIT-licensed source, five-minute example and reproducible failure tests. Five acceptance cases and five additional checks passed. Experimental single-host software; customer validation remains open.</summary><link href="https://alphature.com/research/reliability-guard-release.html" /></entry><entry>
+  <entry><title>Research with runnable code: SDK compatibility study 003</title><id>https://alphature.com/research-notes/003</id><updated>2026-09-10T18:15:00Z</updated><summary>A historical upstream-fixed SDK incompatibility passes dependency metadata checks but fails local runtime probes. Read the paper and reproduce the three-environment experiment in the public Alphature research repository.</summary><link href="https://alphature.com/#research-library" /></entry><entry><title>Genesis Reliability Guard: a free experimental Python release</title><id>https://alphature.com/research/reliability-guard-release.html</id><updated>2026-09-10T17:05:00Z</updated><summary>MIT-licensed source, five-minute example and reproducible failure tests. Five acceptance cases and five additional checks passed. Experimental single-host software; customer validation remains open.</summary><link href="https://alphature.com/research/reliability-guard-release.html" /></entry><entry>
     <title>The teams changed their minds before writing code</title>
     <id>https://alphature.com/research-notes/001</id>
     <updated>2026-09-10T00:00:00Z</updated>

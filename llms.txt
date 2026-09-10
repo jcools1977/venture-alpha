@@ -39,3 +39,9 @@ The aim is to turn demonstrated findings into useful tools and paid services. Th
 - Genesis Reliability Guard v0.1.0: https://github.com/jcools1977/genesis-reliability-guard
 - MIT-licensed, single-host POSIX reference implementation; not production or customer validation.
 - Release report: https://alphature.com/research/reliability-guard-release.html
+
+## Research and repositories
+
+- Public research library: https://alphature.com/#research-library
+- SDK compatibility study and reproduction: https://github.com/jcools1977/alphature-research
+- Study 003 reproduces an upstream-fixed historical incompatibility. No current vulnerability or customer value claim.
