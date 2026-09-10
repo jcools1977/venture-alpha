@@ -4,9 +4,17 @@
   "title": "The Double-Trigger Test",
   "publication_status": "DRAFT_UNPUBLISHED",
   "status": "PROBLEM_SELECTED",
-  "execution_status": "NOT_RUN",
+  "execution_status": "COMPLETE_LOCAL_HARNESS",
   "contract_status": "NOT_FROZEN",
-  "result": null,
+  "result": {
+    "baseline_repeated_identified_dispatches": 2,
+    "candidate_two_process_dispatches": 1,
+    "candidate_two_process_responses": 2,
+    "candidate_restart_replay": true,
+    "candidate_ambiguous_hold": true,
+    "production_readiness": false,
+    "exactly_once_external_effects": false
+  },
   "selected_problem": "C",
   "working_mode": "JOIN_FORCES",
   "selection": {

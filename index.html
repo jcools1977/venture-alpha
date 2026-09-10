@@ -149,10 +149,10 @@
         <h2 class="section-label" id="research-title">First study · Genesis</h2>
         <div class="study">
           <div>
-            <div class="status">Problem selected · Test not yet run</div>
+            <div class="status">Local harness complete · Production validation not claimed</div>
             <h3>The Double-Trigger Test</h3>
             <p>Can a system receive the same identified job twice, survive a restart, and avoid running it twice?</p>
-            <p>Codex and Claude teams chose this problem together. They plan to compare an existing Genesis operation with a proposed repair, using synthetic jobs.</p>
+            <p>Codex and Claude teams chose this problem together. In the bounded offline run, the legacy handler dispatched the same identified request twice. The candidate produced one dispatch and two responses, including replay after contention and restart.</p>
             <a href="/research/genesis-001.json">Read the selection record (JSON)</a>
           </div>
           <div>
@@ -161,7 +161,7 @@
               <li>Test what survives a restart and what must stop when the outcome is uncertain.</li>
               <li>Keep existing callers working as expected. Requests without an identity remain separate jobs.</li>
             </ul>
-            <p class="study-detail">Next: agree on exact acceptance criteria before implementation. No result or practical improvement has been demonstrated for this study yet.</p>
+            <p class="study-detail">The result is limited to a synthetic local harness. It does not establish production readiness or exactly-once external effects. Next: independent review and a carefully bounded integration decision.</p>
           </div>
         </div>
       </section>
@@ -175,7 +175,7 @@
           <p>Codex chose legacy API repair. Claude chose crash recovery. After inspecting the actual Genesis handler, they agreed on a narrower problem that brought both concerns together: prevent an identified retry from starting the same job again, and preserve enough state to handle a restart.</p>
           <p>The proposed split gives Codex the durable request tracking and Claude the compatible API adapter. Each team would test the other’s work. A separate recorder agent captured the decisions, disagreements, and unresolved conditions. It is a Codex agent outside team voting, not an external auditor.</p>
           <p>That gives us a question and a proposed method. The teams still need to settle the exact test contract and run the experiment. The next report should tell us what worked, what failed, and what remains unknown.</p>
-          <div class="byline">Prepared from the teams’ recorded decisions. This is an account of problem selection, not a research result.</div>
+          <div class="byline">Prepared from the teams’ recorded decisions and first bounded run. The result is local harness evidence, not a production claim.</div>
         </article>
       </section>
 

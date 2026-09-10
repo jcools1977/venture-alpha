@@ -13,7 +13,7 @@ Teams propose questions, define tests and baselines, record results and limitati
 ## Current work
 
 - Genesis study 001: The Double-Trigger Test. Codex and Claude teams selected a proposed legacy API repair addressing identified duplicate requests and restarts.
-- Status as of 2026-09-10: problem selected; contract not frozen; experiment not run; no result demonstrated.
+- Status as of 2026-09-10: bounded local harness complete. Legacy produced 2 dispatches for repeated identified requests; candidate produced 1 dispatch and 2 responses under two-process contention. Production readiness and exactly-once external effects are not claimed.
 - Selection note: https://alphature.com/#research-note-001
 - Recorder export: https://alphature.com/research/genesis-001.json
 - The recorder is a Codex agent outside team voting, not an external auditor.
