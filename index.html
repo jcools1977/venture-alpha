@@ -102,7 +102,7 @@
     "@graph": [
       {"@type":"Organization","@id":"https://alphature.com/#org","name":"AN2B LLC","url":"https://an2b.com","email":"j@an2b.com"},
       {"@type":"WebSite","@id":"https://alphature.com/#site","url":"https://alphature.com/","name":"Alphature","description":"The alpha venture: AI teams acting as founders, pursuing useful research and earning the opportunity to build services and new laboratories.","publisher":{"@id":"https://alphature.com/#org"}},
-      {"@type":"BlogPosting","@id":"https://alphature.com/#research-note-001","headline":"The teams changed their minds before writing code","url":"https://alphature.com/#research-note-001","dateCreated":"2026-09-10","description":"A research selection note: Codex and Claude teams chose the Double-Trigger Test after starting with different preferences. The experiment has not run.","author":{"@type":"Organization","name":"AN2B AI research teams"},"publisher":{"@id":"https://alphature.com/#org"}}
+      {"@type":"BlogPosting","@id":"https://alphature.com/#research-note-001","headline":"The teams changed their minds before writing code","url":"https://alphature.com/#research-note-001","dateCreated":"2026-09-10","description":"A research selection note: Codex and Claude teams chose the Double-Trigger Test after starting with different preferences. This historical selection note precedes the completed local experiments and experimental open-source release.","author":{"@type":"Organization","name":"AN2B AI research teams"},"publisher":{"@id":"https://alphature.com/#org"}}
     ]
   }
   </script>
@@ -113,6 +113,7 @@
     <header class="topbar">
       <a class="brand" href="/" aria-label="Alphature home">Alph<b>a</b>ture</a>
       <nav aria-label="Main navigation">
+        <a href="#product">Free tool</a>
         <a href="#research">Research</a>
         <a href="#notes">Notes</a>
         <a href="#work-with-us">Work with us</a>
@@ -126,6 +127,22 @@
         <p class="lede">What can AI teams discover that makes life better? Alphature is where we investigate that question, test ideas, and share what we learn.</p>
         <p class="mission">We give AI teams room to act as founders: choose problems worth solving, build and test their ideas, and make the case for what comes next. The aim is useful knowledge, tools and services people value enough to pay for, and new laboratories that grow from demonstrated results.</p>
       </div>
+
+      <section id="product" aria-labelledby="product-title">
+        <h2 class="section-label" id="product-title">Open source · Free to try</h2>
+        <div class="study">
+          <div><div class="status">v0.1.0 · MIT license · Experimental</div>
+            <h3>What happens when a job runs twice?</h3>
+            <p>Genesis Reliability Guard is a small Python tool for exploring request replay and interrupted work on one Linux or macOS host. Try it on a synthetic workflow, inspect the failure tests, and tell us where it helps or falls short.</p>
+            <p><a href="https://github.com/jcools1977/genesis-reliability-guard#try-it-in-five-minutes">Try the free tool on GitHub →</a></p>
+            <a href="/research/reliability-guard-release.html">Read the experiment and release note →</a>
+          </div>
+          <div><ul><li>No account, telemetry or runtime dependencies.</li><li>Completed requests replay; conflicting payloads are rejected.</li><li>Uncertain outcomes are held for reconciliation.</li></ul>
+            <p class="study-detail">Experimental, single-host software. It is not a production database or a guarantee of exactly-once external effects. Preserving request history and reconciling uncertain work remain essential.</p>
+            <a href="https://github.com/jcools1977/genesis-reliability-guard/issues/new?template=workflow-feedback.md">Share a workflow or reproducible failure →</a>
+          </div>
+        </div>
+      </section>
 
       <section aria-labelledby="founding-title">
         <h2 class="section-label" id="founding-title">Our founding model</h2>
@@ -174,7 +191,7 @@
           <p>We gave Codex and Claude teams four possible problems: recovering work after a crash, reconciling contradictory evidence, repairing a legacy API, and finding financial mismatches. They made their initial choices independently.</p>
           <p>Codex chose legacy API repair. Claude chose crash recovery. After inspecting the actual Genesis handler, they agreed on a narrower problem that brought both concerns together: prevent an identified retry from starting the same job again, and preserve enough state to handle a restart.</p>
           <p>The proposed split gives Codex the durable request tracking and Claude the compatible API adapter. Each team would test the other’s work. A separate recorder agent captured the decisions, disagreements, and unresolved conditions. It is a Codex agent outside team voting, not an external auditor.</p>
-          <p>That gives us a question and a proposed method. The teams still need to settle the exact test contract and run the experiment. The next report should tell us what worked, what failed, and what remains unknown.</p>
+          <p>That gives us a question and a proposed method. At the time of this selection note, the contract and experiment were still ahead. The local studies have since run; our <a href="/research/reliability-guard-release.html">release report</a> describes the results and remaining limits.</p>
           <div class="byline">Prepared from the teams’ recorded decisions and first bounded run. The result is local harness evidence, not a production claim.</div>
         </article>
       </section>
@@ -192,14 +209,6 @@
         <div class="publishing">
           <div class="copy"><h3>Value is the reason to do the work.</h3><p>A promising result is the beginning. We want to find where it can save time, reduce errors, improve decisions, or make something possible that was previously out of reach.</p><p>Where research demonstrates practical value, our aim is to develop paid tools and services that deliver it. Real use will help us test that value and fund further research.</p></div>
           <div class="contact copy"><h3>Bring us a problem worth solving.</h3><p>Tell us what is difficult today, who it affects, and what a useful outcome would look like. We welcome research questions, potential collaborators, and conversations about practical applications.</p><a href="mailto:j@an2b.com">j@an2b.com</a></div>
-        </div>
-      </section>
-
-      <section id="product" aria-labelledby="product-title">
-        <h2 class="section-label" id="product-title">First product candidate</h2>
-        <div class="study">
-          <div><div class="status">Prototype · Pilot offer</div><h3>Genesis Reliability Guard</h3><p>Stop paying twice for the same identified job. We assess one workflow, measure duplicate work, install a reversible request guard, rehearse failure and rollback, and deliver an evidence report.</p><a href="mailto:j@an2b.com?subject=Genesis%20Reliability%20Guard%20pilot">Discuss an authorized pilot →</a></div>
-          <div><ul><li>Replay completed responses.</li><li>Reject payload conflicts.</li><li>Hold uncertain work for reconciliation.</li></ul><p class="study-detail">The pilot does not promise exactly-once external effects or replace authorization, queues, or model governance. Pricing follows a measured workflow and agreed cost model.</p></div>
         </div>
       </section>
 

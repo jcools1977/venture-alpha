@@ -33,3 +33,9 @@ The aim is to turn demonstrated findings into useful tools and paid services. Th
 - AN2B Labs: https://an2b.com/labs
 - Historical July 2026 fleet material: https://alphature.com/archive/fleet-notes-2026-07.html (earlier positioning, not current capability claims)
 - Contact: j@an2b.com
+
+## Free experimental tool
+
+- Genesis Reliability Guard v0.1.0: https://github.com/jcools1977/genesis-reliability-guard
+- MIT-licensed, single-host POSIX reference implementation; not production or customer validation.
+- Release report: https://alphature.com/research/reliability-guard-release.html
