@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "experiment_id": "genesis-cooperative-test-001",
+  "title": "The Double-Trigger Test",
+  "publication_status": "DRAFT_UNPUBLISHED",
+  "status": "PROBLEM_SELECTED",
+  "execution_status": "NOT_RUN",
+  "contract_status": "NOT_FROZEN",
+  "result": null,
+  "selected_problem": "C",
+  "working_mode": "JOIN_FORCES",
+  "selection": {
+    "initial": {
+      "codex": {
+        "choice": "C",
+        "votes": {
+          "C": 2,
+          "D": 1
+        }
+      },
+      "claude": {
+        "choice": "A",
+        "votes": {
+          "A": 3
+        }
+      }
+    },
+    "final": {
+      "codex": "C",
+      "claude": "C"
+    },
+    "selected_by": "Both teams through recorded negotiation",
+    "exact_scope_approved": false
+  },
+  "objective": "Test optional-identity replay protection and ambiguous-interruption holds for one isolated legacy cycle operation.",
+  "hypothesis_status": "DRAFT_PENDING_BILATERAL_CONTRACT_FREEZE",
+  "baseline": "Actual legacy handler in a reviewed offline extraction; not yet executed.",
+  "proposed_case_groups": [
+    "No-header and inactive-state compatibility",
+    "Completed identified response replay",
+    "Two-process same-key contention",
+    "Distinct request identities",
+    "Ledger-write failure prevents dispatch",
+    "Restart after completed response persistence",
+    "Ambiguous interrupted work held without redispatch"
+  ],
+  "proposed_split": {
+    "codex": "Durable request state and recovery",
+    "claude": "Compatible adapter",
+    "review": "Each team tests and reproduces the other component",
+    "recorder": "Evidence only; no vote or implementation/acceptance authority"
+  },
+  "recorder": {
+    "name": "Genesis lab recorder",
+    "affiliation": "Native Codex agent outside both team leadership and voting",
+    "third_party_audit": false
+  },
+  "usage": {
+    "scope": "Selection and negotiation development sessions only",
+    "claude_reported_cost_usd": 3.29129,
+    "claude_receipt_count": 6,
+    "claude_model": "claude-fable-5-1",
+    "codex_cost_usd": null,
+    "elapsed_seconds": null,
+    "unknown_reason": "Codex monetary usage and elapsed duration not exposed by inspected receipts",
+    "invoice_reconciled": false,
+    "application_execution_cost_usd": null
+  },
+  "retained_conditions": [
+    "Identity syntax, responses, fixtures and exact cases not frozen",
+    "Required-memory scope and reusable-interface expectations unresolved",
+    "Future ownership rotation not bilaterally agreed",
+    "File/runner ownership, review rules and finite limits pending",
+    "No automatic fallback"
+  ],
+  "limits": [
+    "Synthetic local behavior only",
+    "No deployment or production-readiness claim",
+    "No exactly-once external-effects claim",
+    "No general model ranking",
+    "No private or customer data included"
+  ],
+  "next_step": "Both teams resolve retained conditions and freeze the contract before implementation.",
+  "evidence": {
+    "recorder_event_count": 14,
+    "recorder_ledger_head_sha256": "b8fd0a5de8a599fa48b1f90f4616666b1f968dd3ecb6258cc8bd5e8cb0da2f88",
+    "codex_final_statement_sha256": "713c7ac37a1306bfd842ec200a562706e2f0091890ff065cc4b8a83175fcabf8",
+    "claude_final_statement_sha256": "008981b0dfa0dc18687b9fcb15422f15718802496f9a8910f8349d639c3339a6"
+  }
+}
