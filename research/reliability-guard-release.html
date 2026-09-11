@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A small guard, five safety checks, and an open-source release · Alphature</title><meta name="description" content="Try our free experimental Python request guard. Reproduce the failure tests and help us learn which workflows need it."><link rel="canonical" href="https://alphature.com/research/reliability-guard-release.html"><style>
+    :root {
+      color-scheme:light dark;
+      --bg:#F4F1EA; --panel:#EBE6DB; --fg:#14181F; --soft:#3A424E;
+      --muted:#59616D; --line:#D8D2C4; --accent:#825914; --link:#365775;
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+      --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    }
+    @media (prefers-color-scheme:dark) {
+      :root { --bg:#0E1116; --panel:#141922; --fg:#ECE7DC; --soft:#B4BBC6;
+        --muted:#A0A9B7; --line:#323C4A; --accent:#E1B15A; --link:#94B8DC; }
+    }
+    :root[data-theme="dark"] { color-scheme:dark; --bg:#0E1116; --panel:#141922;
+      --fg:#ECE7DC; --soft:#B4BBC6; --muted:#A0A9B7; --line:#323C4A; --accent:#E1B15A; --link:#94B8DC; }
+    :root[data-theme="light"] { color-scheme:light; --bg:#F4F1EA; --panel:#EBE6DB;
+      --fg:#14181F; --soft:#3A424E; --muted:#59616D; --line:#D8D2C4; --accent:#825914; --link:#365775; }
+    * { box-sizing:border-box; }
+    html { -webkit-text-size-adjust:100%; scroll-padding-top:1.5rem; }
+    body { margin:0; background:var(--bg); color:var(--fg); font:1.1875rem/1.65 var(--serif); }
+    .wrap { max-width:1020px; margin:auto; padding:0 28px; }
+    a { color:var(--link); text-underline-offset:4px; }
+    a:hover { text-decoration-thickness:2px; }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+    .skip { position:absolute; left:1rem; top:-10rem; padding:1rem; background:var(--bg); z-index:2; }
+    .skip:focus { top:1rem; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:24px;
+      flex-wrap:wrap; border-bottom:1px solid var(--line); padding:24px 0; }
+    .brand { font-size:1.6rem; font-weight:600; text-decoration:none; color:var(--fg); }
+    .brand b { color:var(--accent); font-weight:600; }
+    nav { display:flex; align-items:center; flex-wrap:wrap; gap:12px 22px; font:0.875rem/1.6 var(--mono); }
+    nav a { text-decoration:none; color:var(--soft); }
+    .theme-btn { font:inherit; color:var(--soft); background:transparent; border:1px solid var(--line);
+      padding:10px 14px; min-height:44px; cursor:pointer; border-radius:999px; }
+    .theme-btn:hover { border-color:var(--accent); }
+    .eyebrow,.section-label { font:0.875rem/1.6 var(--mono); letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); }
+    .hero { padding:68px 0 56px; }
+    h1 { font-size:clamp(2.6rem,6.5vw,4.4rem); line-height:1.08; letter-spacing:-0.025em;
+      font-weight:600; max-width:18ch; margin:22px 0 26px; text-wrap:balance; }
+    .lede { max-width:65ch; color:var(--soft); font-size:1.375rem; margin:0 0 20px; }
+    .mission { max-width:67ch; color:var(--soft); margin:0; }
+    section { border-top:1px solid var(--line); padding:36px 0 44px; }
+    h2.section-label { margin:0 0 28px; font-weight:400; }
+    h3 { font-size:1.5rem; line-height:1.25; font-weight:600; margin:0 0 12px; text-wrap:balance; }
+    .steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; list-style:none; padding:0; margin:0; }
+    .step-number { display:block; font:0.875rem/1.6 var(--mono); color:var(--muted); margin-bottom:14px; }
+    .steps p { color:var(--soft); font-size:1.0625rem; margin:0; }
+    .study { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(0,1fr); gap:36px;
+      padding:30px; background:var(--panel); border-left:3px solid var(--accent); }
+    .study h3 { font-size:2rem; }
+    .study p { margin:0 0 18px; color:var(--soft); }
+    .status { font:0.875rem/1.7 var(--mono); color:var(--accent); margin-bottom:18px; }
+    .study ul { padding-left:20px; margin:0; color:var(--soft); font-size:1.0625rem; }
+    .study li+li { margin-top:12px; }
+    .study-detail { border-top:1px solid var(--line); padding-top:16px; font-size:1rem; }
+    .study a { font:0.875rem/1.6 var(--mono); }
+    .note { max-width:70ch; }
+    .note h3 { font-size:clamp(1.7rem,4vw,2.3rem); margin:12px 0 22px; }
+    .note p,.copy p { color:var(--soft); margin:0 0 20px; }
+    .note-meta { display:flex; flex-wrap:wrap; gap:8px 18px; color:var(--muted); font:0.875rem/1.6 var(--mono); }
+    .byline { border-top:1px solid var(--line); padding-top:16px; font:0.875rem/1.7 var(--mono); color:var(--muted); }
+    .publishing { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+    .publishing .copy { max-width:65ch; }
+    .contact { border-left:2px solid var(--line); padding-left:24px; }
+    .contact a { overflow-wrap:anywhere; }
+    .archive { font-size:1rem; color:var(--soft); }
+    .archive p { margin:0 0 12px; }
+    .archive-links { display:flex; flex-wrap:wrap; gap:12px 24px; }
+    footer { border-top:1px solid var(--line); padding:30px 0 44px; display:flex; flex-wrap:wrap;
+      justify-content:space-between; gap:18px; font:0.875rem/1.8 var(--mono); color:var(--muted); }
+    footer a { color:var(--muted); }
+    @media (max-width:800px) { .steps { grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px; }
+      .study { grid-template-columns:1fr; gap:20px; } }
+    @media (max-width:600px) { .wrap { padding:0 20px; } .hero { padding:44px 0 36px; }
+      .topbar { gap:14px; } nav { gap:10px 16px; } .lede { font-size:1.25rem; }
+      .steps,.publishing { grid-template-columns:1fr; } .study { padding:22px; }
+      .contact { border-left:0; border-top:1px solid var(--line); padding:24px 0 0; } }
+  </style></head><body><div class="wrap"><header class="topbar"><a class="brand" href="/">Alphature</a><a href="https://github.com/AN2B-llc/genesis-reliability-guard">Source code</a></header><main class="hero"><div class="eyebrow">Release note · September 10, 2026</div><h1>A small guard. Five safety checks. Free to try.</h1><p class="lede">We are releasing Genesis Reliability Guard under the MIT license: an experimental Python reference tool for request replay and conservative interruption handling.</p><article class="copy"><h2>What the experiment actually found</h2><p>Our original packaged implementation passed only two of five acceptance cases. After a worker exception it could repeat a side effect; a crashed process left a stale lock; and a conflicting concurrent request could receive another payload’s cached response.</p><p>The corrected package passed all five cases. Five additional tests cover failed writes, corrupt state and input identity. Installation, the tests and the demo passed on Linux and macOS with Python 3.11 and 3.14 in GitHub CI.</p><p><a href="https://github.com/AN2B-llc/genesis-reliability-guard/blob/main/research/REPORT.md">Read the method, results and limitations</a> · <a href="https://github.com/AN2B-llc/genesis-reliability-guard/actions/runs/34505358366">Inspect the CI run</a></p><h2>Who should try it?</h2><p>Python developers maintaining local or legacy job handlers who want to inspect retry behavior. Start with synthetic or authorized nonproduction data. The five-minute example needs no sign-up, API key or hosted service.</p><p><a href="https://github.com/AN2B-llc/genesis-reliability-guard#try-it-in-five-minutes">Install and run the example →</a></p><h2>Where it stops</h2><p>This is single-host POSIX software with trusted local storage. It serializes work within a store. Deleting request history can permit repeated effects. Ambiguous work needs manual reconciliation. It does not prove exactly-once remote effects, withstand every storage failure, or replace a production queue.</p><p>Existing tools already cover idempotency. We have not shown an advantage over AWS Powertools, Temporal or your current solution, and we have not validated customer demand.</p><h2>Help us find the useful part</h2><p>Tell us the workflow you tried, what currently handles retries, what failed, and whether you would use this again. Please keep credentials and customer data out of public reports.</p><p><a href="https://github.com/AN2B-llc/genesis-reliability-guard/issues/new?template=workflow-feedback.md">Share workflow feedback →</a></p><p>The core is free under MIT. Future integration or support work would need evidence that it creates value. There is no payment requirement or hosted subscription.</p><p class="byline">Prepared by the Alphature AI lab from executable tests and an AI reviewer’s findings. This is not an independent human security audit.</p></article></main><footer><a href="/">Alphature home</a><a href="/feed.xml">Research feed</a></footer></div></body></html>

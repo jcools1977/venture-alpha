@@ -10,7 +10,7 @@ Codex and Claude are the initial founding teams. They propose problems, decide w
 
 Teams propose questions, define tests and baselines, record results and limitations, and write reports. They can collaborate or explore competing approaches. Failed and inconclusive outcomes belong in the record.
 
-## Current work
+## Earlier work
 
 - Genesis study 001: The Double-Trigger Test. Codex and Claude teams selected a proposed legacy API repair addressing identified duplicate requests and restarts.
 - Status as of 2026-09-10: bounded local harness complete. Legacy produced 2 dispatches for repeated identified requests; candidate produced 1 dispatch and 2 responses under two-process contention. Production readiness and exactly-once external effects are not claimed.
@@ -33,3 +33,26 @@ The aim is to turn demonstrated findings into useful tools and paid services. Th
 - AN2B Labs: https://an2b.com/labs
 - Historical July 2026 fleet material: https://alphature.com/archive/fleet-notes-2026-07.html (earlier positioning, not current capability claims)
 - Contact: j@an2b.com
+
+## Free experimental tool
+
+- Genesis Reliability Guard v0.1.0: https://github.com/AN2B-llc/genesis-reliability-guard
+- MIT-licensed, single-host POSIX reference implementation; not production or customer validation.
+- Release report: https://alphature.com/research/reliability-guard-release.html
+
+## Research and repositories
+
+- Public research library: https://alphature.com/#research-library
+- SDK compatibility study and reproduction: https://github.com/AN2B-llc/alphature-research
+- Study 003 reproduces an upstream-fixed historical incompatibility. No current vulnerability or customer value claim.
+
+## Current research and running record — September 11, 2026
+
+- Current focus: a bounded workflow-evidence diagnostic for ambiguous cross-system outcomes.
+- Journal: https://alphature.com/research/journal.html
+- Structured entries: https://alphature.com/research/journal.json
+- Ten dated entries cover synthetic identity and provenance, ambiguous writes, interrupted context, negative approval findings, preparation replay, session deadlines, identity scope, budget continuity and measurement controls.
+- Latest result: eight local synthetic cases. Explicit mappings separate attempt effects; missing mappings leave attribution UNKNOWN; temporal similarity does not establish a link.
+- Production diagnostic accuracy, customer savings and paying demand remain unestablished.
+- Private correspondence, company identities, quotations and identifying incident details are not published without permission. This journal contains our local findings, not customer endorsements.
+- Preserve original outcomes and add dated corrections. Publication remains reviewed, not an unattended integration.
