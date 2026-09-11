@@ -1,0 +1,97 @@
+{
+  "updated": "2026-09-11",
+  "scope": "Public summaries of AN2B local research; not a customer incident archive",
+  "editorial_policy": "Separate observations, interpretations and limits. Preserve negative results and dated corrections. Do not publish private correspondence, identifying details, quotations or third-party company attribution without permission. Publication remains reviewed.",
+  "entries": [
+    {
+      "date": "2026-09-11",
+      "id": "fragmented-identity",
+      "title": "When a mapping disappears, attribution must stop",
+      "method": "Eight local synthetic cases",
+      "observed": "Three writes committed in a temporary database. Explicit mapping records attributed two distinct resources to two attempts of one intended operation; a third write with the same timestamp and payload fingerprint stayed unassigned. Removing the second dispatch mapping left that attempt UNKNOWN. Cross-tenant and non-authoritative evidence stayed unknown, competing mappings stayed CONFLICTING, and reversing input order preserved results.",
+      "limits": "Mapping truth and database authority are fixture assumptions. This does not authenticate production evidence, establish causality from similarity, or measure diagnostic accuracy on real incidents.",
+      "decision": "Keep the small example reviewable. Test the representation against independently supplied evidence before expanding it into a general graph engine."
+    },
+    {
+      "date": "2026-09-11",
+      "id": "claim-provenance",
+      "title": "A confirmed write is only one claim",
+      "method": "Six local evidence variants",
+      "observed": "The revised model distinguishes minimum positive write evidence from a later corroborating lookup. Both observations share a source failure domain. Removing the lookup preserves the narrow write claim; removing the commit leaves it unknown. Payload and lookup disagreements remain conflicting. Attempt attribution is withheld when the downstream record lacks an attempt identifier.",
+      "limits": "Write confirmation does not establish business completion, caller reconciliation or the response-loss cause. Multiple records from one producer are not independent confirmation.",
+      "decision": "Carry support record identifiers through each claim; preserve unresolved questions separately."
+    },
+    {
+      "date": "2026-09-11",
+      "id": "ambiguous-write",
+      "title": "A timeout can follow a committed write",
+      "method": "Synthetic diagnostic",
+      "observed": "A temporary database committed a write before the harness deliberately raised a timeout. A read-only lookup subsequently found the record. The modeled retry was held; the database contained one row and no retry was executed. Partial evidence left the outcome unknown.",
+      "limits": "This is a local simulation, not a network-failure reproduction or production incident. The supplied records do not by themselves establish the injected response-loss cause.",
+      "decision": "Investigate how to distinguish recorded facts, supported conclusions and unresolved outcomes."
+    },
+    {
+      "date": "2026-09-11",
+      "id": "interrupt-context",
+      "title": "Run status can omit the pending decision",
+      "method": "Six source-body checks with stub clients",
+      "observed": "The inspected check-tool code fetched output for successful runs and exposed errors for failed runs. Interrupted runs returned status and thread identity without fetching the pending interrupt context, even when the stub could supply it.",
+      "limits": "Only selected release function bodies were exercised. This was not a full SDK, hosted server or resume-operation test. No lost checkpoint was established.",
+      "decision": "Require decision context separately during diagnostic intake. Pause implementation pending an affected integration."
+    },
+    {
+      "date": "2026-09-11",
+      "id": "approval-negative",
+      "title": "The reported approval failure did not reproduce",
+      "method": "Sixteen scripted local cases",
+      "observed": "Every modeled flow paused before its write. After one resume, approval produced one synthetic write and rejection produced none. The child resumed at its pending gate rather than restarting its plan; no case interrupted a second time.",
+      "limits": "The test did not recreate the reported redispatch path, process crashes or concurrent clients. Failure to reproduce neither disproves a report nor establishes a fix.",
+      "decision": "Pause until a minimal configuration or trace explains what triggers redispatch."
+    },
+    {
+      "date": "2026-09-11",
+      "id": "nested-replay",
+      "title": "Workflow shape changed preparation replay",
+      "method": "Sixteen comparisons and four configuration checks",
+      "observed": "Nested workflow shapes repeated a completed preparation task after resume in both tested versions. A top-level shape did not. Two configuration alternatives on the newer tested version ran preparation once and preserved approval and rejection behavior.",
+      "limits": "This was not an approval bypass. Local counters stood in for preparation work; no provider expense or real duplicate downstream effect was measured. In-memory persistence does not test restart durability.",
+      "decision": "Prefer the demonstrated configuration alternatives for these fixtures. Do not start another replay product without a concrete residual need."
+    },
+    {
+      "date": "2026-09-11",
+      "id": "session-deadline",
+      "title": "A deadline bounded reconnection by ending the session",
+      "method": "Local session-lifetime control; follows September 10 observation",
+      "observed": "In the initial six-second observation, a normally closed stream triggered six GET requests; a refusal response triggered two. A later 2.5-second caller deadline ended the session. Three synthetic notifications arrived before cancellation in the useful-event case, and no new GET occurred during the 1.3-second post-exit window.",
+      "limits": "An observation window does not prove infinite reconnection. Ending the session also ends useful notifications; this is not a repair for a persistent stream.",
+      "decision": "Pause standalone product work unless a real workflow needs more than caller-owned session containment."
+    },
+    {
+      "date": "2026-09-10",
+      "id": "identity-scope",
+      "title": "A request key needs a scope",
+      "method": "Five synthetic cases",
+      "observed": "An unscoped key replayed a response across synthetic tenants when payloads matched. A structured tenant, operation and request tuple separated those cases while retaining matching retries. Simple delimiter concatenation collided for the chosen delimiter-bearing inputs.",
+      "limits": "The fixture does not supply tenant authentication or prove production isolation. Identity scoping remains a caller responsibility.",
+      "decision": "Retain the negative control and document structured scope; no product patch was inferred from caller configuration."
+    },
+    {
+      "date": "2026-09-10",
+      "id": "budget-continuity",
+      "title": "A missing budget file must not reset authority",
+      "method": "Five acceptance cases and two limitation controls",
+      "observed": "The baseline met two of five acceptance cases; the candidate met all five by refusing normal startup without the existing store and its matching identity. It still accepted an older valid snapshot with the same identity. Explicit reinitialization could also create a new budget after deleting both files.",
+      "limits": "These were temporary synthetic ledgers, not provider charges. Identity matching does not establish rollback-resistant accounting or account-wide spend enforcement.",
+      "decision": "Keep initialization outside automatic recovery. Do not describe the local accounting control as a provider billing cap."
+    },
+    {
+      "date": "2026-09-10",
+      "id": "measurement-controls",
+      "title": "Measurement controls need evidence of their own",
+      "method": "Nine synthetic scenarios",
+      "observed": "A clear synthetic signal reached a candidate awaiting human acceptance. Weak, competing and invalid signals stopped for review. Missing authorization performed no measurement. Unsupported actions, out-of-range parameters and exhausted resources were refused. Altered evidence failed local verification.",
+      "limits": "No physical equipment or live inference was used. A Python audit hook is not an operating-system sandbox; local hashes do not establish independent custody or authenticated human acceptance.",
+      "decision": "Keep the distinction between a simulated control exercise and a validated laboratory."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research journal · Alphature</title><meta name="description" content="A dated record of Alphature experiments, negative results, corrections and open questions."><link rel="canonical" href="https://alphature.com/research/journal.html"><style>
+    :root {
+      color-scheme:light dark;
+      --bg:#F4F1EA; --panel:#EBE6DB; --fg:#14181F; --soft:#3A424E;
+      --muted:#59616D; --line:#D8D2C4; --accent:#825914; --link:#365775;
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+      --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    }
+    @media (prefers-color-scheme:dark) {
+      :root { --bg:#0E1116; --panel:#141922; --fg:#ECE7DC; --soft:#B4BBC6;
+        --muted:#A0A9B7; --line:#323C4A; --accent:#E1B15A; --link:#94B8DC; }
+    }
+    :root[data-theme="dark"] { color-scheme:dark; --bg:#0E1116; --panel:#141922;
+      --fg:#ECE7DC; --soft:#B4BBC6; --muted:#A0A9B7; --line:#323C4A; --accent:#E1B15A; --link:#94B8DC; }
+    :root[data-theme="light"] { color-scheme:light; --bg:#F4F1EA; --panel:#EBE6DB;
+      --fg:#14181F; --soft:#3A424E; --muted:#59616D; --line:#D8D2C4; --accent:#825914; --link:#365775; }
+    * { box-sizing:border-box; }
+    html { -webkit-text-size-adjust:100%; scroll-padding-top:1.5rem; }
+    body { margin:0; background:var(--bg); color:var(--fg); font:1.1875rem/1.65 var(--serif); }
+    .wrap { max-width:1020px; margin:auto; padding:0 28px; }
+    a { color:var(--link); text-underline-offset:4px; }
+    a:hover { text-decoration-thickness:2px; }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+    .skip { position:absolute; left:1rem; top:-10rem; padding:1rem; background:var(--bg); z-index:2; }
+    .skip:focus { top:1rem; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:24px;
+      flex-wrap:wrap; border-bottom:1px solid var(--line); padding:24px 0; }
+    .brand { font-size:1.6rem; font-weight:600; text-decoration:none; color:var(--fg); }
+    .brand b { color:var(--accent); font-weight:600; }
+    nav { display:flex; align-items:center; flex-wrap:wrap; gap:12px 22px; font:0.875rem/1.6 var(--mono); }
+    nav a { text-decoration:none; color:var(--soft); }
+    .theme-btn { font:inherit; color:var(--soft); background:transparent; border:1px solid var(--line);
+      padding:10px 14px; min-height:44px; cursor:pointer; border-radius:999px; }
+    .theme-btn:hover { border-color:var(--accent); }
+    .eyebrow,.section-label { font:0.875rem/1.6 var(--mono); letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); }
+    .hero { padding:68px 0 56px; }
+    h1 { font-size:clamp(2.6rem,6.5vw,4.4rem); line-height:1.08; letter-spacing:-0.025em;
+      font-weight:600; max-width:18ch; margin:22px 0 26px; text-wrap:balance; }
+    .lede { max-width:65ch; color:var(--soft); font-size:1.375rem; margin:0 0 20px; }
+    .mission { max-width:67ch; color:var(--soft); margin:0; }
+    section { border-top:1px solid var(--line); padding:36px 0 44px; }
+    h2.section-label { margin:0 0 28px; font-weight:400; }
+    h3 { font-size:1.5rem; line-height:1.25; font-weight:600; margin:0 0 12px; text-wrap:balance; }
+    .steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; list-style:none; padding:0; margin:0; }
+    .step-number { display:block; font:0.875rem/1.6 var(--mono); color:var(--muted); margin-bottom:14px; }
+    .steps p { color:var(--soft); font-size:1.0625rem; margin:0; }
+    .study { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(0,1fr); gap:36px;
+      padding:30px; background:var(--panel); border-left:3px solid var(--accent); }
+    .study h3 { font-size:2rem; }
+    .study p { margin:0 0 18px; color:var(--soft); }
+    .status { font:0.875rem/1.7 var(--mono); color:var(--accent); margin-bottom:18px; }
+    .study ul { padding-left:20px; margin:0; color:var(--soft); font-size:1.0625rem; }
+    .study li+li { margin-top:12px; }
+    .study-detail { border-top:1px solid var(--line); padding-top:16px; font-size:1rem; }
+    .study a { font:0.875rem/1.6 var(--mono); }
+    .note { max-width:70ch; }
+    .note h3 { font-size:clamp(1.7rem,4vw,2.3rem); margin:12px 0 22px; }
+    .note p,.copy p { color:var(--soft); margin:0 0 20px; }
+    .note-meta { display:flex; flex-wrap:wrap; gap:8px 18px; color:var(--muted); font:0.875rem/1.6 var(--mono); }
+    .byline { border-top:1px solid var(--line); padding-top:16px; font:0.875rem/1.7 var(--mono); color:var(--muted); }
+    .publishing { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+    .publishing .copy { max-width:65ch; }
+    .contact { border-left:2px solid var(--line); padding-left:24px; }
+    .contact a { overflow-wrap:anywhere; }
+    .archive { font-size:1rem; color:var(--soft); }
+    .archive p { margin:0 0 12px; }
+    .archive-links { display:flex; flex-wrap:wrap; gap:12px 24px; }
+    footer { border-top:1px solid var(--line); padding:30px 0 44px; display:flex; flex-wrap:wrap;
+      justify-content:space-between; gap:18px; font:0.875rem/1.8 var(--mono); color:var(--muted); }
+    footer a { color:var(--muted); }
+    @media (max-width:800px) { .steps { grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px; }
+      .study { grid-template-columns:1fr; gap:20px; } }
+    @media (max-width:600px) { .wrap { padding:0 20px; } .hero { padding:44px 0 36px; }
+      .topbar { gap:14px; } nav { gap:10px 16px; } .lede { font-size:1.25rem; }
+      .steps,.publishing { grid-template-columns:1fr; } .study { padding:22px; }
+      .contact { border-left:0; border-top:1px solid var(--line); padding:24px 0 0; } }
+  
+.journal-entry{max-width:74ch;margin-bottom:2rem}.journal-entry h2{font-size:1.8rem;line-height:1.25}.journal-entry p{color:var(--soft)} </style></head><body><div class="wrap"><header class="topbar"><a class="brand" href="/">Alphature</a><nav aria-label="Main"><a href="/#research-library">Research library</a><a href="/feed.xml">Feed</a></nav></header><main id="main"><div class="hero"><div class="eyebrow">Running research record · Updated September 11, 2026</div><h1>What we tested. What we learned.</h1><p class="lede">A dated record of experiments, corrections, negative results and decisions to stop.</p><p>Our current question is how to explain an uncertain cross-system operation from fragmented evidence. The entries below describe local work. Production diagnostic accuracy, measured customer savings and paying demand remain unestablished.</p><p>We publish our research findings, not private correspondence. Names, company details, quotations and identifying incident descriptions require permission. These summaries contain no customer incident narratives or endorsements.</p><p><a href="/research/journal.json">Read the structured journal</a> · <a href="/feed.xml">Follow updates</a></p></div><nav aria-label="Journal entries"><ol><li><a href="#fragmented-identity">When a mapping disappears, attribution must stop</a></li><li><a href="#claim-provenance">A confirmed write is only one claim</a></li><li><a href="#ambiguous-write">A timeout can follow a committed write</a></li><li><a href="#interrupt-context">Run status can omit the pending decision</a></li><li><a href="#approval-negative">The reported approval failure did not reproduce</a></li><li><a href="#nested-replay">Workflow shape changed preparation replay</a></li><li><a href="#session-deadline">A deadline bounded reconnection by ending the session</a></li><li><a href="#identity-scope">A request key needs a scope</a></li><li><a href="#budget-continuity">A missing budget file must not reset authority</a></li><li><a href="#measurement-controls">Measurement controls need evidence of their own</a></li></ol></nav>
+<section class="journal-entry" id="fragmented-identity"><div class="note-meta"><time datetime="2026-09-11">2026-09-11</time><span>Eight local synthetic cases</span></div><h2>When a mapping disappears, attribution must stop</h2><p><strong>Observed.</strong> Three writes committed in a temporary database. Explicit mapping records attributed two distinct resources to two attempts of one intended operation; a third write with the same timestamp and payload fingerprint stayed unassigned. Removing the second dispatch mapping left that attempt UNKNOWN. Cross-tenant and non-authoritative evidence stayed unknown, competing mappings stayed CONFLICTING, and reversing input order preserved results.</p><p><strong>Limits.</strong> Mapping truth and database authority are fixture assumptions. This does not authenticate production evidence, establish causality from similarity, or measure diagnostic accuracy on real incidents.</p><p><strong>Decision.</strong> Keep the small example reviewable. Test the representation against independently supplied evidence before expanding it into a general graph engine.</p></section>
+
+<section class="journal-entry" id="claim-provenance"><div class="note-meta"><time datetime="2026-09-11">2026-09-11</time><span>Six local evidence variants</span></div><h2>A confirmed write is only one claim</h2><p><strong>Observed.</strong> The revised model distinguishes minimum positive write evidence from a later corroborating lookup. Both observations share a source failure domain. Removing the lookup preserves the narrow write claim; removing the commit leaves it unknown. Payload and lookup disagreements remain conflicting. Attempt attribution is withheld when the downstream record lacks an attempt identifier.</p><p><strong>Limits.</strong> Write confirmation does not establish business completion, caller reconciliation or the response-loss cause. Multiple records from one producer are not independent confirmation.</p><p><strong>Decision.</strong> Carry support record identifiers through each claim; preserve unresolved questions separately.</p></section>
+
+<section class="journal-entry" id="ambiguous-write"><div class="note-meta"><time datetime="2026-09-11">2026-09-11</time><span>Synthetic diagnostic</span></div><h2>A timeout can follow a committed write</h2><p><strong>Observed.</strong> A temporary database committed a write before the harness deliberately raised a timeout. A read-only lookup subsequently found the record. The modeled retry was held; the database contained one row and no retry was executed. Partial evidence left the outcome unknown.</p><p><strong>Limits.</strong> This is a local simulation, not a network-failure reproduction or production incident. The supplied records do not by themselves establish the injected response-loss cause.</p><p><strong>Decision.</strong> Investigate how to distinguish recorded facts, supported conclusions and unresolved outcomes.</p></section>
+
+<section class="journal-entry" id="interrupt-context"><div class="note-meta"><time datetime="2026-09-11">2026-09-11</time><span>Six source-body checks with stub clients</span></div><h2>Run status can omit the pending decision</h2><p><strong>Observed.</strong> The inspected check-tool code fetched output for successful runs and exposed errors for failed runs. Interrupted runs returned status and thread identity without fetching the pending interrupt context, even when the stub could supply it.</p><p><strong>Limits.</strong> Only selected release function bodies were exercised. This was not a full SDK, hosted server or resume-operation test. No lost checkpoint was established.</p><p><strong>Decision.</strong> Require decision context separately during diagnostic intake. Pause implementation pending an affected integration.</p></section>
+
+<section class="journal-entry" id="approval-negative"><div class="note-meta"><time datetime="2026-09-11">2026-09-11</time><span>Sixteen scripted local cases</span></div><h2>The reported approval failure did not reproduce</h2><p><strong>Observed.</strong> Every modeled flow paused before its write. After one resume, approval produced one synthetic write and rejection produced none. The child resumed at its pending gate rather than restarting its plan; no case interrupted a second time.</p><p><strong>Limits.</strong> The test did not recreate the reported redispatch path, process crashes or concurrent clients. Failure to reproduce neither disproves a report nor establishes a fix.</p><p><strong>Decision.</strong> Pause until a minimal configuration or trace explains what triggers redispatch.</p></section>
+
+<section class="journal-entry" id="nested-replay"><div class="note-meta"><time datetime="2026-09-11">2026-09-11</time><span>Sixteen comparisons and four configuration checks</span></div><h2>Workflow shape changed preparation replay</h2><p><strong>Observed.</strong> Nested workflow shapes repeated a completed preparation task after resume in both tested versions. A top-level shape did not. Two configuration alternatives on the newer tested version ran preparation once and preserved approval and rejection behavior.</p><p><strong>Limits.</strong> This was not an approval bypass. Local counters stood in for preparation work; no provider expense or real duplicate downstream effect was measured. In-memory persistence does not test restart durability.</p><p><strong>Decision.</strong> Prefer the demonstrated configuration alternatives for these fixtures. Do not start another replay product without a concrete residual need.</p></section>
+
+<section class="journal-entry" id="session-deadline"><div class="note-meta"><time datetime="2026-09-11">2026-09-11</time><span>Local session-lifetime control; follows September 10 observation</span></div><h2>A deadline bounded reconnection by ending the session</h2><p><strong>Observed.</strong> In the initial six-second observation, a normally closed stream triggered six GET requests; a refusal response triggered two. A later 2.5-second caller deadline ended the session. Three synthetic notifications arrived before cancellation in the useful-event case, and no new GET occurred during the 1.3-second post-exit window.</p><p><strong>Limits.</strong> An observation window does not prove infinite reconnection. Ending the session also ends useful notifications; this is not a repair for a persistent stream.</p><p><strong>Decision.</strong> Pause standalone product work unless a real workflow needs more than caller-owned session containment.</p></section>
+
+<section class="journal-entry" id="identity-scope"><div class="note-meta"><time datetime="2026-09-10">2026-09-10</time><span>Five synthetic cases</span></div><h2>A request key needs a scope</h2><p><strong>Observed.</strong> An unscoped key replayed a response across synthetic tenants when payloads matched. A structured tenant, operation and request tuple separated those cases while retaining matching retries. Simple delimiter concatenation collided for the chosen delimiter-bearing inputs.</p><p><strong>Limits.</strong> The fixture does not supply tenant authentication or prove production isolation. Identity scoping remains a caller responsibility.</p><p><strong>Decision.</strong> Retain the negative control and document structured scope; no product patch was inferred from caller configuration.</p></section>
+
+<section class="journal-entry" id="budget-continuity"><div class="note-meta"><time datetime="2026-09-10">2026-09-10</time><span>Five acceptance cases and two limitation controls</span></div><h2>A missing budget file must not reset authority</h2><p><strong>Observed.</strong> The baseline met two of five acceptance cases; the candidate met all five by refusing normal startup without the existing store and its matching identity. It still accepted an older valid snapshot with the same identity. Explicit reinitialization could also create a new budget after deleting both files.</p><p><strong>Limits.</strong> These were temporary synthetic ledgers, not provider charges. Identity matching does not establish rollback-resistant accounting or account-wide spend enforcement.</p><p><strong>Decision.</strong> Keep initialization outside automatic recovery. Do not describe the local accounting control as a provider billing cap.</p></section>
+
+<section class="journal-entry" id="measurement-controls"><div class="note-meta"><time datetime="2026-09-10">2026-09-10</time><span>Nine synthetic scenarios</span></div><h2>Measurement controls need evidence of their own</h2><p><strong>Observed.</strong> A clear synthetic signal reached a candidate awaiting human acceptance. Weak, competing and invalid signals stopped for review. Missing authorization performed no measurement. Unsupported actions, out-of-range parameters and exhausted resources were refused. Altered evidence failed local verification.</p><p><strong>Limits.</strong> No physical equipment or live inference was used. A Python audit hook is not an operating-system sandbox; local hashes do not establish independent custody or authenticated human acceptance.</p><p><strong>Decision.</strong> Keep the distinction between a simulated control exercise and a validated laboratory.</p></section>
+
+<section id="earlier-studies"><h2>Earlier studies remain available</h2><p>The <a href="/#research">Double-Trigger Test</a>, <a href="/research/reliability-guard-release.html">experimental guard release</a> and <a href="/#research-library">SDK compatibility study</a> remain part of the record. Their original scope and limitations still apply. The <a href="/archive/fleet-notes-2026-07.html">July archive</a> documents an earlier direction.</p></section>
+
+<section id="corrections"><h2>Corrections and publication notes</h2><p><time datetime="2026-09-11">September 11, 2026</time>: the early selection note and feed described an experiment that had not yet run. That wording described the selection stage; the local run is now complete. The updated note links forward to the result while retaining the original selection history.</p><p>The narrow synthetic write report has also been clarified: its later lookup is additional corroboration, not independent proof. The minimum write evidence and additional support now have distinct roles in the local model.</p><p>This page is an editorial summary, not the complete experimental evidence bundle. Results are not externally replicated unless explicitly stated. Future updates should add dated entries or correction notes rather than silently replacing earlier outcomes.</p></section>
+</main><footer><span>Alphature · AN2B LLC</span><a href="mailto:j@an2b.com">Research correspondence</a></footer></div></body></html>
