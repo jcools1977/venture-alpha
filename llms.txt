@@ -56,3 +56,5 @@ The aim is to turn demonstrated findings into useful tools and paid services. Th
 - Production diagnostic accuracy, customer savings and paying demand remain unestablished.
 - Private correspondence, company identities, quotations and identifying incident details are not published without permission. This journal contains our local findings, not customer endorsements.
 - Preserve original outcomes and add dated corrections. Publication remains reviewed, not an unattended integration.
+
+September 13 correction: fifteen local cases exercise separate identity and effect claims, duplicate-ID validation and evidence-record assignment. The prior eight-case result did not test these integrity failures. See the journal entry identity-effect-separation.

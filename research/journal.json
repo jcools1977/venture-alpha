@@ -1,8 +1,17 @@
 {
-  "updated": "2026-09-11",
+  "updated": "2026-09-13",
   "scope": "Public summaries of AN2B local research; not a customer incident archive",
   "editorial_policy": "Separate observations, interpretations and limits. Preserve negative results and dated corrections. Do not publish private correspondence, identifying details, quotations or third-party company attribution without permission. Publication remains reviewed.",
   "entries": [
+    {
+      "date": "2026-09-13",
+      "id": "identity-effect-separation",
+      "title": "Identity can be known while the effect remains unconfirmed",
+      "method": "Fifteen local before-and-after cases",
+      "observed": "Adversarial inputs exposed three defects in our earlier evaluator: duplicate record IDs redirected a write claim, duplicate native IDs erased an attempt claim, and a shared resource name hid an unassigned evidence record. A separate revision rejects duplicate canonical node and relationship IDs, keys claims by evidence record, separates identity from write authority, and retains accepted partial mappings. The original eight cases and seven added variations passed the revised checks.",
+      "limits": "These are local fixture results, not production validation. Mapping truth and source authority remain assumptions. A confirmed attempt-to-record link does not establish membership in the intended logical operation when its upstream link is missing. Effect equivalence is not inferred from a shared resource.",
+      "decision": "Preserve the earlier result and this correction. Explain unknown outcomes by cause, retain partial evidence, and test identity and effect claims separately before adding inference."
+    },
     {
       "date": "2026-09-11",
       "id": "fragmented-identity",
