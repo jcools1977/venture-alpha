@@ -51,8 +51,9 @@ The aim is to turn demonstrated findings into useful tools and paid services. Th
 - Current focus: a bounded workflow-evidence diagnostic for ambiguous cross-system outcomes.
 - Journal: https://alphature.com/research/journal.html
 - Structured entries: https://alphature.com/research/journal.json
-- Twelve dated entries cover synthetic identity and provenance, ambiguous writes, interrupted context, negative approval findings, preparation replay, session deadlines, identity scope, budget continuity and measurement controls.
+- Thirteen dated entries cover synthetic identity and provenance, ambiguous writes, interrupted context, negative approval findings, preparation replay, session deadlines, identity scope, budget continuity and measurement controls.
 - Latest evaluator result: fifteen local cases separate identity, write authority and operation membership. Duplicate canonical identifiers fail validation. A subsequent five-case constructed-record comparison explores existing hooks; it is not a live runtime test.
+- Latest backend study: sequential controls retained success; a deliberately interleaved stale read replaced success with retry in a real local result store. No queue-worker failure or customer incident was reproduced.
 - Production diagnostic accuracy, customer savings and paying demand remain unestablished.
 - Private correspondence, company identities, quotations and identifying incident details are not published without permission. This journal contains our local findings, not customer endorsements.
 - Preserve original outcomes and add dated corrections. Publication remains reviewed, not an unattended integration.

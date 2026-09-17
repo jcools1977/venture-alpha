@@ -5,7 +5,14 @@
   <link href="https://alphature.com/feed.xml" rel="self" />
   <link href="https://alphature.com/" />
   <id>https://alphature.com/</id>
-  <updated>2026-09-17T14:17:05Z</updated>
+  <updated>2026-09-17T14:51:59Z</updated>
+  <entry>
+    <title>A success check can still lose a concurrent update</title>
+    <id>https://alphature.com/research/journal.html#result-state-ordering</id>
+    <updated>2026-09-17T14:51:59Z</updated>
+    <summary>Both sequential controls retained SUCCESS. In the concurrent case, a retry read PENDING and paused; another client stored SUCCESS; resuming the earlier read allowed RETRY to replace it. A fresh reader confirmed each transition. The test deliberately controlled timing in the result backend. It did not run a queue worker, interrupt a connection, reproduce a customer incident or measure occurrence rates. No downstream effect or customer loss was established.</summary>
+    <link href="https://alphature.com/research/journal.html#result-state-ordering" />
+  </entry>
   <entry>
     <title>Use existing execution records before building another collector</title>
     <id>https://alphature.com/research/journal.html#existing-hook-evidence</id>

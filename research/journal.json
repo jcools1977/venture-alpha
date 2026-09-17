@@ -5,6 +5,15 @@
   "entries": [
     {
       "date": "2026-09-17",
+      "id": "result-state-ordering",
+      "title": "A success check can still lose a concurrent update",
+      "method": "Three orderings tested against pinned source and a real local result store",
+      "observed": "Both sequential controls retained SUCCESS. In the concurrent case, a retry read PENDING and paused; another client stored SUCCESS; resuming the earlier read allowed RETRY to replace it. A fresh reader confirmed each transition.",
+      "limits": "The test deliberately controlled timing in the result backend. It did not run a queue worker, interrupt a connection, reproduce a customer incident or measure occurrence rates. No downstream effect or customer loss was established.",
+      "decision": "Preserve the minimal reproduction for review. Do not treat a result-cache status as a complete operation history or build another retry product from this finding alone."
+    },
+    {
+      "date": "2026-09-17",
       "id": "existing-hook-evidence",
       "title": "Use existing execution records before building another collector",
       "method": "Five constructed-record scenarios; no live runtime capture",
