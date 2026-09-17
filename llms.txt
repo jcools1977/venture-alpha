@@ -46,13 +46,13 @@ The aim is to turn demonstrated findings into useful tools and paid services. Th
 - SDK compatibility study and reproduction: https://github.com/AN2B-llc/alphature-research
 - Study 003 reproduces an upstream-fixed historical incompatibility. No current vulnerability or customer value claim.
 
-## Current research and running record — September 11, 2026
+## Current research and running record — September 17, 2026
 
 - Current focus: a bounded workflow-evidence diagnostic for ambiguous cross-system outcomes.
 - Journal: https://alphature.com/research/journal.html
 - Structured entries: https://alphature.com/research/journal.json
-- Ten dated entries cover synthetic identity and provenance, ambiguous writes, interrupted context, negative approval findings, preparation replay, session deadlines, identity scope, budget continuity and measurement controls.
-- Latest result: eight local synthetic cases. Explicit mappings separate attempt effects; missing mappings leave attribution UNKNOWN; temporal similarity does not establish a link.
+- Twelve dated entries cover synthetic identity and provenance, ambiguous writes, interrupted context, negative approval findings, preparation replay, session deadlines, identity scope, budget continuity and measurement controls.
+- Latest evaluator result: fifteen local cases separate identity, write authority and operation membership. Duplicate canonical identifiers fail validation. A subsequent five-case constructed-record comparison explores existing hooks; it is not a live runtime test.
 - Production diagnostic accuracy, customer savings and paying demand remain unestablished.
 - Private correspondence, company identities, quotations and identifying incident details are not published without permission. This journal contains our local findings, not customer endorsements.
 - Preserve original outcomes and add dated corrections. Publication remains reviewed, not an unattended integration.
