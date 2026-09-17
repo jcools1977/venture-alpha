@@ -1,8 +1,17 @@
 {
-  "updated": "2026-09-13",
+  "updated": "2026-09-17",
   "scope": "Public summaries of AN2B local research; not a customer incident archive",
   "editorial_policy": "Separate observations, interpretations and limits. Preserve negative results and dated corrections. Do not publish private correspondence, identifying details, quotations or third-party company attribution without permission. Publication remains reviewed.",
   "entries": [
+    {
+      "date": "2026-09-17",
+      "id": "existing-hook-evidence",
+      "title": "Use existing execution records before building another collector",
+      "method": "Five constructed-record scenarios; no live runtime capture",
+      "observed": "A modeled deny, revised call, timeout and later tool return could be grouped by explicit invocation identifiers. Removing a separately retained policy decision left that decision unknown; a missing identifier left an event unjoined; a reused identifier in another conversation remained separate.",
+      "limits": "This exercise used constructed records informed by published schemas. It did not verify runtime event delivery or administrative logs. Tool success did not establish a downstream commit, and a hook policy decision was not treated as authenticated human approval.",
+      "decision": "Investigate configuration of existing tools before building a replacement collector. Full validation requires an authorized operator capture and independent effect evidence."
+    },
     {
       "date": "2026-09-13",
       "id": "identity-effect-separation",
